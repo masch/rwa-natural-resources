@@ -1,0 +1,29 @@
+[package]
+name = "boscora-nft"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[features]
+testutils = ["soroban-sdk/testutils"]
+
+[dependencies]
+soroban-sdk = "25.0.2"
+stellar-access = { git = "https://github.com/OpenZeppelin/stellar-contracts", version = "0.6.0" }
+stellar-tokens = { git = "https://github.com/OpenZeppelin/stellar-contracts", version = "0.6.0" }
+stellar-contract-utils = { git = "https://github.com/OpenZeppelin/stellar-contracts", version = "0.6.0" }
+stellar-macros = { git = "https://github.com/OpenZeppelin/stellar-contracts", version = "0.6.0" }
+
+[dev-dependencies]
+soroban-sdk = { version = "25.0.2", features = ["testutils"] }
+
+[profile.release]
+opt-level = "z"
+overflow-checks = true
+debug = false
+panic = "abort"
+lto = true
+codegen-units = 1

@@ -195,7 +195,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "boscora-impacta"
+name = "boscora-nft"
 version = "0.1.0"
 dependencies = [
  "soroban-sdk",
@@ -203,6 +203,16 @@ dependencies = [
  "stellar-contract-utils",
  "stellar-macros",
  "stellar-tokens",
+]
+
+[[package]]
+name = "boscora-oracle"
+version = "0.1.0"
+dependencies = [
+ "soroban-sdk",
+ "stellar-access",
+ "stellar-contract-utils",
+ "stellar-macros",
 ]
 
 [[package]]

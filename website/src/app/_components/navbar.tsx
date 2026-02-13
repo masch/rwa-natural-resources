@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
-import Image from "next/image";
 
 const NAV_LINKS = [
   { id: "impacto", label: "Nuestro Impacto" },
@@ -48,32 +47,24 @@ export function Navbar() {
 
   return (
     <nav
-      style={{ zIndex: 9999 }}
-      className={`fixed left-0 right-0 top-0 transition-all duration-500 ${
+      style={{
+        zIndex: 9999,
+        ...(scrolled && { backgroundColor: "rgba(0, 0, 0, 0.15)" }),
+      }}
+      className={`fixed top-0 right-0 left-0 transition-all duration-500 ${
         visible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
-      } ${
-        scrolled
-          ? "bg-emerald-950/95 backdrop-blur-md shadow-lg"
-          : "bg-transparent"
-      }`}
+      } ${scrolled ? "shadow-lg backdrop-blur-md" : "bg-transparent"}`}
     >
-      <div className="container mx-auto px-6 py-3">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <button
-            onClick={() => scrollToSection("hero")}
-            className="shrink-0 transition-opacity hover:opacity-80"
-          >
-            <Image
-              src="/lgoo.webp"
-              alt="Bosques de Agua"
-              width={160}
-              height={48}
-              className={`h-10 w-auto transition-all duration-300 ${scrolled ? "brightness-100" : "brightness-0 invert"}`}
-              priority
-            />
-          </button>
+      <div className="relative container mx-auto py-3">
+        {/* Border bottom verde que llega hasta 1/4 desde la izquierda */}
+        <div
+          className="bg-musgo absolute right-0 bottom-0 h-px w-1/3"
+          style={{
+            boxShadow: "0 0 8px rgba(143, 188, 143, 0.5)",
+          }}
+        />
 
+        <div className="flex items-center justify-end">
           {/* Desktop Menu */}
           <div className="hidden items-center gap-8 md:flex">
             {NAV_LINKS.map((link) =>
@@ -81,7 +72,7 @@ export function Navbar() {
                 <button
                   key={link.id}
                   onClick={() => scrollToSection(link.id)}
-                  className="rounded-full bg-emerald-600 px-6 py-2 text-sm font-medium text-white transition-all hover:scale-105 hover:bg-emerald-700"
+                  className="bg-bosque text-crema hover:bg-bosque-dark rounded-full px-6 py-2 text-sm font-medium transition-all hover:scale-105"
                 >
                   {link.label}
                 </button>
@@ -89,7 +80,7 @@ export function Navbar() {
                 <button
                   key={link.id}
                   onClick={() => scrollToSection(link.id)}
-                  className="text-sm font-medium text-white/90 transition-colors hover:text-emerald-300"
+                  className="text-crema/90 hover:text-musgo text-sm font-medium transition-colors"
                 >
                   {link.label}
                 </button>
@@ -100,7 +91,7 @@ export function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="text-white md:hidden"
+            className="text-crema md:hidden"
             aria-label="Toggle menu"
           >
             <svg
@@ -123,13 +114,13 @@ export function Navbar() {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="mt-4 flex flex-col gap-4 rounded-lg bg-emerald-950/95 p-6 backdrop-blur-lg md:hidden">
+          <div className="bg-bosque/95 mt-4 flex flex-col gap-4 rounded-lg p-6 backdrop-blur-lg md:hidden">
             {NAV_LINKS.map((link) =>
               link.id === "contacto" ? (
                 <button
                   key={link.id}
                   onClick={() => scrollToSection(link.id)}
-                  className="rounded-full bg-emerald-600 px-6 py-3 text-center text-white transition-all hover:bg-emerald-700"
+                  className="bg-musgo text-bosque hover:bg-musgo-dark rounded-full px-6 py-3 text-center transition-all"
                 >
                   {link.label}
                 </button>
@@ -137,7 +128,7 @@ export function Navbar() {
                 <button
                   key={link.id}
                   onClick={() => scrollToSection(link.id)}
-                  className="text-left text-white transition-colors hover:text-emerald-300"
+                  className="text-crema hover:text-musgo text-left transition-colors"
                 >
                   {link.label}
                 </button>

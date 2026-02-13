@@ -1,6 +1,33 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* Fuentes */
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display), ui-serif, Georgia, serif;
+
+  /* Paleta de colores - Natural Resources */
+  /* 🌲 Verde Bosque - Primario: Evoca vegetación y crecimiento */
+  --color-bosque: #355e3b;
+  --color-bosque-light: #4a7d50;
+  --color-bosque-dark: #254229;
+
+  /* 🌱 Verde Musgo - Secundario: Sensación de vida y renovación */
+  --color-musgo: #8fbc8f;
+  --color-musgo-light: #a8cda8;
+  --color-musgo-dark: #76a376;
+
+  /* 🟫 Marrón Tierra - Base: Conexión con suelo y raíces */
+  --color-tierra: #8b4513;
+  --color-tierra-light: #a55a28;
+  --color-tierra-dark: #6b3410;
+
+  /* 🟡 Ocre / Terracota - Acento: Calidez, sol y tierra natural */
+  --color-ocre: #a0522d;
+  --color-ocre-light: #b8643d;
+  --color-ocre-dark: #7d3f22;
+
+  /* 🪵 Beige / Crema - Neutral: Fondo cálido y limpio */
+  --color-crema: #f5f5dc;
+  --color-crema-light: #faf9ed;
+  --color-crema-dark: #e8e8cc;
 }

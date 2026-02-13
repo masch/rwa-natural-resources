@@ -48,7 +48,7 @@ export function ImpactText() {
             ref={(el) => {
               if (el) paragraphsRef.current[index] = el;
             }}
-            className="border-l-4 border-musgo pl-6 text-xl leading-relaxed text-crema md:text-2xl md:leading-relaxed"
+            className="border-musgo text-crema border-l-4 pl-6 text-xl leading-relaxed md:text-2xl md:leading-relaxed"
           >
             {text}
           </p>

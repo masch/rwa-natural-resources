@@ -1,14 +1,24 @@
 import { useState, useEffect } from 'react';
 import { kml } from '@tmcw/togeojson';
+import { StellarWalletsKit } from '@creit-tech/stellar-wallets-kit/sdk';
+import { defaultModules } from '@creit-tech/stellar-wallets-kit/modules/utils';
 import './App.css';
 import MapComponent from './components/MapComponent';
 import type { LotFeature } from './components/MapComponent';
+
+// Init the kit globally
+StellarWalletsKit.init({
+  network: 'TESTNET' as any,
+  selectedWalletId: 'freighter',
+  modules: defaultModules()
+});
 
 function App() {
   const [lots, setLots] = useState<LotFeature[]>([]);
   const [selectedLotIds, setSelectedLotIds] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [walletConnected, setWalletConnected] = useState(false);
+  const [publicKey, setPublicKey] = useState<string>('');
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
@@ -95,9 +105,14 @@ function App() {
   const selectedLotsCards = lots.filter(l => selectedLotIds.includes(l.id));
   const totalAmount = selectedLotsCards.reduce((acc, curr) => acc + curr.price, 0);
 
-  const handleConnectWallet = () => {
-    // Dummy Stellar Wallet connection
-    setWalletConnected(true);
+  const handleConnectWallet = async () => {
+    try {
+      const { address } = await StellarWalletsKit.authModal();
+      setPublicKey(address);
+      setWalletConnected(true);
+    } catch (error) {
+      console.error("Error connecting wallet:", error);
+    }
   };
 
   const handleDonate = () => {
@@ -148,7 +163,7 @@ function App() {
           Bosques de Agua (BDA)
         </h1>
         <button className="connect-wallet-btn" onClick={handleConnectWallet}>
-          {walletConnected ? '✅ Wallet Conectada' : '🔗 Conectar Wallet Stellar'}
+          {walletConnected ? `✅ ${publicKey.slice(0, 4)}...${publicKey.slice(-4)}` : '🔗 Conectar Wallet Stellar'}
         </button>
       </header>
 

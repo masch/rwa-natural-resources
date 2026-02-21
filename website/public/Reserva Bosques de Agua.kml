@@ -1,0 +1,1409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Reserva Bosques de Agua 4112024.kml</name>
+	<open>1</open>
+	<atom:link rel="app" href="https://www.google.com/earth/about/versions/#earth-pro" title="Google Earth Pro 7.3.6.10441"></atom:link>
+	<Style id="10">
+		<IconStyle id="11">
+			<heading>0</heading>
+			<Icon id="12">
+				<href>files/red-pin-down.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="105">
+		<IconStyle id="106">
+			<heading>0</heading>
+			<Icon id="107">
+				<href>files/red-pin-down.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="115">
+		<IconStyle id="116">
+			<heading>0</heading>
+			<Icon id="117">
+				<href>files/red-pin-down.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="1200">
+		<IconStyle id="121">
+			<heading>0</heading>
+			<Icon id="122">
+				<href>files/red-pin-down.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="125">
+		<IconStyle id="126">
+			<heading>0</heading>
+			<Icon id="127">
+				<href>files/red-pin-down.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="130">
+		<IconStyle id="131">
+			<heading>0</heading>
+			<Icon id="132">
+				<href>files/red-pin-down.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="135">
+		<IconStyle>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/grn-blank.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/grn-blank-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Style id="1350">
+		<IconStyle>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/grn-blank.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/grn-blank-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<StyleMap id="1351">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#1350</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#135</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="151">
+		<IconStyle id="16">
+			<heading>0</heading>
+			<Icon id="17">
+				<href>files/red-pin-down.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="20">
+		<IconStyle id="21">
+			<heading>0</heading>
+			<Icon id="22">
+				<href>files/red-pin-down.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="25">
+		<IconStyle id="26">
+			<heading>0</heading>
+			<Icon id="27">
+				<href>files/red-pin-down.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="35">
+		<IconStyle id="36">
+			<heading>0</heading>
+			<Icon id="37">
+				<href>files/red-pin-down.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="45">
+		<IconStyle id="46">
+			<heading>0</heading>
+			<Icon id="47">
+				<href>files/red-pin-down.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<StyleMap id="5">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#50</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#51</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="50">
+		<IconStyle id="6">
+			<heading>0</heading>
+			<Icon id="7">
+				<href>files/red-pin-down.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="51">
+		<IconStyle id="6">
+			<heading>0</heading>
+			<Icon id="7">
+				<href>files/red-pin-down.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="55">
+		<IconStyle id="56">
+			<heading>0</heading>
+			<Icon id="57">
+				<href>files/red-pin-down.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="65">
+		<IconStyle id="66">
+			<heading>0</heading>
+			<Icon id="67">
+				<href>files/red-pin-down.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="70">
+		<IconStyle id="71">
+			<heading>0</heading>
+			<Icon id="72">
+				<href>files/red-pin-down.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="80">
+		<IconStyle id="81">
+			<heading>0</heading>
+			<Icon id="82">
+				<href>files/red-pin-down.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="900">
+		<IconStyle id="91">
+			<heading>0</heading>
+			<Icon id="92">
+				<href>files/red-pin-down.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<StyleMap id="msn_C">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_C0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_C</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_C0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_C</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_C0</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_T">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_T</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_T</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_campground">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_campground</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_campground</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_grn-blank0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_grn-blank2</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_grn-blank0</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_grn-blank1">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_grn-blank3</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_grn-blank3</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_grn-blank2">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_grn-blank1</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_grn-blank1</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_grn-blank3">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_grn-blank4</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_grn-blank00</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_grn-blank4">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_grn-blank0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_grn-blank2</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_parks">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_parks</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_parks</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin04">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin14</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin03</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin12">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin6</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin22</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin23">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin04</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin32</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin32">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin33</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin14</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin6">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin22</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin7</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_C">
+		<IconStyle>
+			<scale>0.590909</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/C.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<color>ff0000ff</color>
+			<scale>0.5</scale>
+		</LabelStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/C-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Style id="sh_C0">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/C.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<color>ff0000ff</color>
+		</LabelStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/C-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Style id="sh_T">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/T.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<color>ff0000ff</color>
+		</LabelStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/T-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Style id="sh_campground">
+		<IconStyle>
+			<scale>1.4</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/campground.png</href>
+			</Icon>
+			<hotSpot x="0.5" y="0" xunits="fraction" yunits="fraction"/>
+		</IconStyle>
+		<LabelStyle>
+			<color>ff00aa00</color>
+		</LabelStyle>
+	</Style>
+	<Style id="sh_grn-blank0">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/grn-blank.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/grn-blank-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Style id="sh_grn-blank00">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/grn-blank.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/grn-blank-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Style id="sh_grn-blank1">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/grn-blank.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/grn-blank-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Style id="sh_grn-blank2">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/grn-blank.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/grn-blank-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Style id="sh_grn-blank3">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/grn-blank.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/grn-blank-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Style id="sh_parks">
+		<IconStyle>
+			<scale>1.4</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/parks.png</href>
+			</Icon>
+			<hotSpot x="0.5" y="0" xunits="fraction" yunits="fraction"/>
+		</IconStyle>
+		<LabelStyle>
+			<color>ff000000</color>
+		</LabelStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin03">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ffff0000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin14">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>https://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0000aa</color>
+			<width>1.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<color>807f00aa</color>
+			<outline>0</outline>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin22">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ffff0000</color>
+			<width>4</width>
+		</LineStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin32">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>https://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff7300e1</color>
+			<width>1.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<color>807f55ff</color>
+			<outline>0</outline>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin7">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ffff0000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_C">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/C.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<color>ff0000ff</color>
+		</LabelStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/C-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Style id="sn_C0">
+		<IconStyle>
+			<scale>0.5</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/C.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<color>ff0000ff</color>
+			<scale>0.5</scale>
+		</LabelStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/C-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Style id="sn_T">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/T.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<color>ff0000ff</color>
+		</LabelStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/T-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Style id="sn_campground">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/campground.png</href>
+			</Icon>
+			<hotSpot x="0.5" y="0" xunits="fraction" yunits="fraction"/>
+		</IconStyle>
+		<LabelStyle>
+			<color>ff00aa00</color>
+		</LabelStyle>
+	</Style>
+	<Style id="sn_grn-blank0">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/grn-blank.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/grn-blank-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Style id="sn_grn-blank1">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/grn-blank.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/grn-blank-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Style id="sn_grn-blank2">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/grn-blank.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/grn-blank-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Style id="sn_grn-blank3">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/grn-blank.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/grn-blank-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Style id="sn_grn-blank4">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/grn-blank.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/grn-blank-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Style id="sn_parks">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/parks.png</href>
+			</Icon>
+			<hotSpot x="0.5" y="0" xunits="fraction" yunits="fraction"/>
+		</IconStyle>
+		<LabelStyle>
+			<color>ff000000</color>
+		</LabelStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin04">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>https://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff7300e1</color>
+			<width>1.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<color>807f55ff</color>
+			<outline>0</outline>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin14">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ffff0000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin22">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ffff0000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin33">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>https://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0000aa</color>
+			<width>1.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<color>807f00aa</color>
+			<outline>0</outline>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin6">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ffff0000</color>
+			<width>4</width>
+		</LineStyle>
+	</Style>
+	<Folder>
+		<name>Reserva Bosques de Agua</name>
+		<open>1</open>
+		<Folder>
+			<name>Limites</name>
+			<open>1</open>
+			<Document>
+				<name>139 Hectareas.kmz</name>
+				<open>1</open>
+				<StyleMap id="msn_ylw-pushpin42">
+					<Pair>
+						<key>normal</key>
+						<styleUrl>#sn_ylw-pushpin42</styleUrl>
+					</Pair>
+					<Pair>
+						<key>highlight</key>
+						<styleUrl>#sh_ylw-pushpin41</styleUrl>
+					</Pair>
+				</StyleMap>
+				<Style id="sh_ylw-pushpin41">
+					<IconStyle>
+						<scale>1.3</scale>
+						<Icon>
+							<href>https://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+						</Icon>
+						<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+					</IconStyle>
+					<LineStyle>
+						<color>ff00ff00</color>
+						<width>2.4</width>
+					</LineStyle>
+					<PolyStyle>
+						<color>4d00ff00</color>
+					</PolyStyle>
+				</Style>
+				<Style id="sn_ylw-pushpin42">
+					<IconStyle>
+						<scale>1.1</scale>
+						<Icon>
+							<href>https://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+						</Icon>
+						<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+					</IconStyle>
+					<LineStyle>
+						<color>ff00ff00</color>
+						<width>2.4</width>
+					</LineStyle>
+					<PolyStyle>
+						<color>4d00ff00</color>
+					</PolyStyle>
+				</Style>
+				<Placemark id="01769B415026BC4B06FC">
+					<name>139 Hectareas</name>
+					<styleUrl>#msn_ylw-pushpin42</styleUrl>
+					<Polygon>
+						<tessellate>1</tessellate>
+						<outerBoundaryIs>
+							<LinearRing>
+								<coordinates>
+									-64.79362514535958,-31.50459915135908,0 -64.79538875664176,-31.49113764295744,0 -64.80761968708974,-31.49617539653971,0 -64.80666690854228,-31.50325853241951,0 -64.79362514535958,-31.50459915135908,0 
+								</coordinates>
+							</LinearRing>
+						</outerBoundaryIs>
+					</Polygon>
+				</Placemark>
+			</Document>
+			<Document>
+				<name>posesión 70.kmz</name>
+				<StyleMap id="msn_ylw-pushpin50">
+					<Pair>
+						<key>normal</key>
+						<styleUrl>#sn_ylw-pushpin51</styleUrl>
+					</Pair>
+					<Pair>
+						<key>highlight</key>
+						<styleUrl>#sh_ylw-pushpin50</styleUrl>
+					</Pair>
+				</StyleMap>
+				<Style id="sh_ylw-pushpin50">
+					<IconStyle>
+						<scale>1.3</scale>
+						<Icon>
+							<href>https://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+						</Icon>
+						<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+					</IconStyle>
+					<LineStyle>
+						<color>ff7300e1</color>
+						<width>1.5</width>
+					</LineStyle>
+					<PolyStyle>
+						<color>337f55ff</color>
+						<outline>0</outline>
+					</PolyStyle>
+				</Style>
+				<Style id="sn_ylw-pushpin51">
+					<IconStyle>
+						<scale>1.1</scale>
+						<Icon>
+							<href>https://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+						</Icon>
+						<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+					</IconStyle>
+					<LineStyle>
+						<color>ff7300e1</color>
+						<width>1.5</width>
+					</LineStyle>
+					<PolyStyle>
+						<color>337f55ff</color>
+						<outline>0</outline>
+					</PolyStyle>
+				</Style>
+				<Placemark id="089F5CE871256F85F359">
+					<name>posesión</name>
+					<styleUrl>#msn_ylw-pushpin50</styleUrl>
+					<Polygon>
+						<tessellate>1</tessellate>
+						<outerBoundaryIs>
+							<LinearRing>
+								<coordinates>
+									-64.79362135870346,-31.50460156854438,0 -64.78091410153364,-31.50586906286972,0 -64.78299170657419,-31.50194352686813,0 -64.78347291712515,-31.50096459630764,0 -64.78387386952696,-31.49973597691341,0 -64.78397517327214,-31.49875532031455,0 -64.78398592375888,-31.4987499877006,0 -64.7942945570787,-31.49940675276624,0 -64.79362135870346,-31.50460156854438,0 
+								</coordinates>
+							</LinearRing>
+						</outerBoundaryIs>
+					</Polygon>
+				</Placemark>
+			</Document>
+		</Folder>
+		<Folder>
+			<name>Caminos Internos</name>
+			<open>1</open>
+			<Placemark>
+				<name>Camino a Cascada</name>
+				<styleUrl>#msn_ylw-pushpin6</styleUrl>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>
+						-64.79938577498514,-31.50086402934083,0 -64.79930838595466,-31.50064820019747,0 -64.79930552073721,-31.50063874219661,0 -64.79930289402772,-31.50063278556289,0 -64.7992311479433,-31.50031790182908,0 -64.79917168753789,-31.50008303697804,0 -64.79917313031305,-31.50006514912354,0 -64.79917175943375,-31.50004867182989,0 -64.79913609784191,-31.49982270103384,0 -64.79913608267343,-31.49981493051954,0 -64.79913098213082,-31.49959304291513,0 -64.79917129271604,-31.4994368657182,0 -64.79918199473261,-31.49942878796721,0 -64.79920014692874,-31.49941441770931,0 -64.79921168474927,-31.49940369356685,0 -64.79930731354652,-31.49932954087322,0 -64.79936659621076,-31.49915452234675,0 -64.79944036175674,-31.49894796879481,0 -64.79945139497444,-31.49893798117178,0 -64.79946389875907,-31.49892315136003,0 -64.79956432480074,-31.49863285444192,0 -64.79953733098182,-31.498474382283,0 -64.79938971222316,-31.4984857123423,0 -64.79938168169284,-31.49849141937744,0 -64.79924958774868,-31.49858348353611,0 -64.79924484193396,-31.49858591421012,0 -64.79923537111702,-31.4985907647295,0 -64.79922220491022,-31.49860194076954,0 -64.79911866277662,-31.49863063068016,0 -64.7988547931736,-31.49867764416656,0 -64.79875015473192,-31.49856631619398,0 -64.79873360475673,-31.49854799109889,0 -64.79870979836231,-31.49852055830849,0 -64.79868104381585,-31.49848438640336,0 -64.79866668953308,-31.49846376279956,0 -64.79857615825331,-31.4983839447646,0 -64.79847396304991,-31.49835686244755,0 -64.79846813641515,-31.49835822886682,0 -64.79846687669135,-31.49835886476524,0 -64.79837557535643,-31.49833848963211,0 -64.79830850395035,-31.49826925120466,0 -64.79826687009447,-31.49816704535881,0 -64.79826516325794,-31.49816195404173,0 -64.79826229917535,-31.49815651714145,0 -64.79823716790196,-31.49806207513627,0 -64.7982328820043,-31.49805576249295,0 -64.79823113090831,-31.49804886144812,0 -64.7982280092269,-31.49794241375832,0 -64.79829568149368,-31.49778513606918,0 -64.79836088108638,-31.49774298334123,0 -64.79836631083813,-31.49769068748343,0 -64.79839286228898,-31.49763233755557,0 -64.7983954296833,-31.49763086127845,0 -64.79847092555856,-31.49757637242969,0 -64.79845482977949,-31.49749921923167,0 -64.7984428381138,-31.49742044890575,0 -64.7984459962843,-31.49741733231062,0 -64.79845144339453,-31.49740945912284,0 -64.798497190085,-31.4972958456558,0 -64.79847916527095,-31.49722345050106,0 -64.79848089520895,-31.49721589815965,0 -64.79848298120729,-31.49720679136656,0 -64.79851434478772,-31.49716577209251,0 -64.7985708013028,-31.49713546915821,0 -64.79867433322494,-31.49706007198109,0 -64.7988207387575,-31.49702844809598,0 -64.79891070176691,-31.49690717969284,0 -64.79900144091272,-31.49675927444026,0 -64.7990192190848,-31.49668240449353,0 -64.79901374828208,-31.49667881819148,0 -64.79900981791914,-31.4966756733564,0 -64.79889961325954,-31.49660700260706,0 -64.7988887378182,-31.49660806230093,0 -64.79884167724731,-31.4966243452285,0 -64.79881959846466,-31.4965853742554,0 -64.79881876061474,-31.49658406849458,0 -64.79876875563184,-31.49653134904207,0 -64.79868158047677,-31.49646993247564,0 -64.79868456211264,-31.49646356671099,0 -64.79870437295598,-31.4964238107817,0 -64.7987096962153,-31.49641901558389,0 -64.79873239441314,-31.49634998541762,0 -64.79873241757272,-31.49634475906262,0 -64.79873180141256,-31.49633671122585,0 -64.79875867959892,-31.49625802876086,0 -64.79882866111565,-31.49622082217574,0 -64.79881537946498,-31.49612642834579,0 
+					</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<name>Camino a toma de agua</name>
+				<styleUrl>#msn_ylw-pushpin6</styleUrl>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>
+						-64.79453411048162,-31.50362674566171,0 -64.79453715126569,-31.50362417356648,0 -64.79458829412052,-31.50346567482224,0 -64.79459461891497,-31.50328641553677,0 -64.79465044383659,-31.50308307272707,0 -64.7946823757289,-31.50290524437245,0 -64.79471518649335,-31.50268351020406,0 -64.7947449310758,-31.50253703777885,0 -64.79479956009341,-31.50238787975958,0 -64.79487117827304,-31.50218322338542,0 -64.79500596091466,-31.50191470473562,0 -64.79510415958703,-31.5016980629134,0 -64.79518339744816,-31.50146952360389,0 -64.79529188335047,-31.50122413564342,0 -64.79537234051976,-31.5009726046167,0 -64.79537397467155,-31.50096658118793,0 -64.79537520516922,-31.50096202282503,0 -64.79542200871197,-31.50081373535647,0 -64.79547056966437,-31.50062590302207,0 -64.7954718556654,-31.50062093964823,0 -64.79561170559376,-31.50036075647559,0 -64.79568566017198,-31.50019810375311,0 -64.79569203587845,-31.50019296874236,0 -64.79577295760653,-31.50009842926598,0 -64.79591127424655,-31.49998763396937,0 
+					</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<name>Camino vehicular a Tapera</name>
+				<styleUrl>#msn_ylw-pushpin04</styleUrl>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>
+						-64.80364868064137,-31.49470284364206,0 -64.80481451181352,-31.49516038494736,0 -64.80481420726153,-31.49515066446872,0 -64.80479188719467,-31.49526031392927,0 -64.80474014605866,-31.49540445921991,0 -64.80463215801173,-31.49554764304557,0 -64.80456367794463,-31.49566556342178,0 -64.80462054673195,-31.4957782420524,0 -64.80467181319,-31.4958806537376,0 -64.80457522492863,-31.49598742310144,0 -64.80438659771481,-31.49610917643394,0 -64.80430514889454,-31.49623034142363,0 -64.80431409892054,-31.49637793039955,0 -64.80441724914924,-31.49644477482147,0 -64.8044552866036,-31.4965628669388,0 -64.80443481824328,-31.49671698711615,0 -64.80443172857578,-31.49681514292957,0 -64.80458117838198,-31.49685664544513,0 -64.80488413494983,-31.49689925109191,0 -64.80500307438625,-31.49695261108995,0 -64.80510939583908,-31.49705812748839,0 -64.80517655436604,-31.49709971979073,0 -64.80533977755049,-31.49715852909392,0 -64.80548548312046,-31.49722900754382,0 -64.80569084466016,-31.49721993340932,0 -64.80580157381721,-31.49732771141481,0 -64.80599019449728,-31.49740614232921,0 -64.80607930464156,-31.49751351430799,0 -64.80611918262804,-31.49757477800092,0 -64.80623509668406,-31.49764835959495,0 -64.80632754256577,-31.49781657816111,0 -64.80635842783968,-31.49797476952805,0 -64.80642021162234,-31.49816389842951,0 -64.80647904717793,-31.49835168560931,0 -64.80655292493327,-31.49848463494472,0 -64.80662206823929,-31.49856929018726,0 -64.80659040045961,-31.4986809243812,0 -64.8065145396085,-31.49874691411808,0 -64.80648153275355,-31.49880639304784,0 -64.80655309193052,-31.49890892450289,0 -64.80655491825597,-31.49890948995622,0 -64.80668954748397,-31.49906435764142,0 -64.8067646431427,-31.49916040734589,0 -64.80675269066892,-31.49924366264498,0 -64.80680755483118,-31.49933555806802,0 -64.80687020621924,-31.49943096205607,0 -64.80695055955344,-31.49955029765,0 -64.80699414488994,-31.49967042530848,0 -64.80703103754793,-31.49976864997814,0 -64.80707042938957,-31.49983335400979,0 -64.80708874203648,-31.49991319507389,0 -64.80700829968353,-31.49995958254646,0 -64.80694448581465,-31.5000939701072,0 -64.80695998111905,-31.50017816076627,0 -64.80694148416968,-31.50025581758246,0 -64.80691586911425,-31.50032029272662,0 -64.80690436380577,-31.50037637853394,0 -64.80693493812318,-31.50043623625904,0 -64.80697485867451,-31.50050855260245,0 -64.80698002301899,-31.50064710401158,0 -64.8069364191217,-31.50080303935166,0 -64.80690454705295,-31.50093951369471,0 -64.8068690837372,-31.50105551011999,0 -64.80678967008667,-31.50114664279705,0 -64.80682161113737,-31.5012398478892,0 -64.80688825548454,-31.50134350543129,0 -64.80685055477626,-31.50142179374685,0 -64.8067621234796,-31.50149528386394,0 -64.80671245934727,-31.5015409745385,0 -64.80672653921015,-31.50162636996199,0 -64.80678354435105,-31.50167523463245,0 -64.8068167910364,-31.50171806533963,0 -64.80682399783529,-31.50180433186126,0 
+					</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<name>Camino Principal al Refugio</name>
+				<styleUrl>#msn_ylw-pushpin12</styleUrl>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>
+						-64.80685536190956,-31.50180840542693,0 -64.80669311927456,-31.50185626356107,0 -64.80637446511248,-31.50201658108589,0 -64.80616763900332,-31.50212599834914,0 -64.80602129991982,-31.50220938641557,0 -64.8058765925207,-31.50236733198689,0 -64.80587342425468,-31.50237212329912,0 -64.80581118101568,-31.50252000814129,0 -64.80580730210194,-31.502530240871,0 -64.80580080168993,-31.50254611550424,0 -64.80578575806754,-31.50257131666452,0 -64.80569495462844,-31.50266801791876,0 -64.80553265336893,-31.50281585448183,0 -64.80537270452749,-31.50291476131788,0 -64.80537003628926,-31.50291748147185,0 -64.80536635980906,-31.5029230169156,0 -64.80536074312799,-31.50292695540968,0 -64.80524698129828,-31.50294909935654,0 -64.8049118205314,-31.50298482361117,0 -64.80461789829943,-31.50295629688199,0 -64.80430072959186,-31.50289322947391,0 -64.80405461370552,-31.50282611913865,0 -64.80404187305479,-31.50282712044642,0 -64.8040346386195,-31.5028284748072,0 -64.8038835925452,-31.50279488031629,0 -64.80387463736024,-31.5027979289832,0 -64.80386402198104,-31.50280269261486,0 -64.80385862946606,-31.50280414485329,0 -64.80367828464682,-31.50280637394766,0 -64.80327642182844,-31.50279180087735,0 -64.80309541622378,-31.50279782773261,0 -64.80291210813242,-31.50287803707509,0 -64.80272516455054,-31.50292109483287,0 -64.80247778885024,-31.50287318718013,0 -64.80246598681197,-31.50287280422763,0 -64.80245655046615,-31.50287249808289,0 -64.80226963892859,-31.50279242025178,0 -64.80212711689234,-31.50271890437167,0 -64.80197133393111,-31.50263962363544,0 -64.80180116161736,-31.50263244891867,0 -64.80178954947213,-31.50263226124181,0 -64.80168398054752,-31.50260699856773,0 -64.80168207094117,-31.50260514692656,0 -64.8016686802581,-31.50259582529141,0 -64.80165911829748,-31.50249555472218,0 -64.80159847624441,-31.50242492599375,0 -64.801444688329,-31.50242819195559,0 -64.8011553040549,-31.50245124367088,0 -64.80093048327441,-31.50246148043492,0 -64.80070808562114,-31.50255167246332,0 -64.80069992086963,-31.50255136800531,0 -64.80045079001371,-31.50260973321858,0 -64.80023269240431,-31.50264838399581,0 -64.80012172833011,-31.50258057212571,0 -64.80011571526984,-31.50257853613395,0 -64.80005983860508,-31.50249068189638,0 -64.80007751054444,-31.50238328446644,0 -64.80010399006305,-31.50219767906131,0 -64.80010085975427,-31.50204709345548,0 -64.80010170538203,-31.501884146006,0 -64.80005911951318,-31.50177442345768,0 -64.79996561283286,-31.50167497269701,0 -64.7998785300861,-31.50157336938707,0 -64.79987811686533,-31.50156747355232,0 -64.79990405072172,-31.50145917484841,0 -64.7999691453378,-31.50136575015242,0 -64.80000846144146,-31.50122299818896,0 -64.79993397067109,-31.50115165301299,0 -64.79976571930736,-31.50112088357369,0 -64.79975376853258,-31.50111535000172,0 -64.79965450446456,-31.50106569872119,0 -64.79956883360686,-31.50097484096315,0 -64.79943237708646,-31.50088398813655,0 -64.79925118560929,-31.50086770979025,0 -64.79916220933245,-31.50092426081082,0 -64.79915826259514,-31.50092787926465,0 -64.79915262517875,-31.50093918198021,0 -64.79895965690331,-31.50110096579535,0 -64.79886600879269,-31.50119143257436,0 -64.7986927877583,-31.50130346228765,0 -64.79855489968861,-31.50141805458227,0 -64.79842857365715,-31.50150628409104,0 -64.7982986876156,-31.50162971358954,0 -64.79829365603285,-31.50163661979629,0 -64.79820056052252,-31.50168742525302,0 -64.79802386945686,-31.50168037420867,0 -64.79800732141283,-31.50168146281177,0 -64.79796976052039,-31.5016855083445,0 -64.79784614380237,-31.50168608550294,0 -64.79784326999997,-31.50169664749944,0 -64.79783485073634,-31.50170251801111,0 -64.79776176463977,-31.50179877259045,0 -64.79776342141517,-31.50180688369873,0 -64.79775189401519,-31.50205359255461,0 -64.79769207447077,-31.50218326453662,0 -64.79753468463018,-31.50227424781227,0 -64.79752741578694,-31.50227851997322,0 -64.79750808896645,-31.50228663781758,0 -64.7973429450402,-31.5023631577973,0 -64.79714457614122,-31.50241829539203,0 -64.7971266504501,-31.50242367947183,0 -64.79711344305508,-31.50242936147684,0 -64.79698294707285,-31.50247894441627,0 -64.79687095633361,-31.50246143101472,0 -64.7967783011765,-31.50243388188473,0 -64.79677269464732,-31.50243995414174,0 -64.79666347629821,-31.50248984394919,0 -64.79651958170138,-31.50257816953865,0 -64.79647304343624,-31.5026261816245,0 -64.79646246306099,-31.50263647178839,0 -64.79644833733876,-31.50264646219015,0 -64.79643603900428,-31.5026546969555,0 -64.79633864466653,-31.50267376832615,0 -64.79632294919124,-31.50267811742366,0 -64.79630714028065,-31.50268065924532,0 -64.79619424117503,-31.50275597316805,0 -64.79618859028446,-31.50276559727521,0 -64.79609937666943,-31.50284724300179,0 -64.79603172498074,-31.50296416441128,0 -64.79591810525798,-31.50313440562177,0 -64.79582645759046,-31.50325321486693,0 -64.79581408513241,-31.50327386874271,0 -64.79581005599449,-31.50328210800165,0 -64.79575388094281,-31.50342367865691,0 -64.7957013821286,-31.50352539123895,0 -64.79569773675466,-31.5035323102226,0 -64.79556872709473,-31.50362522180443,0 -64.79541432632054,-31.50372755305309,0 -64.79541197915208,-31.50372954260226,0 -64.79539782451702,-31.50373929503105,0 -64.79521135350379,-31.50375269161071,0 -64.79520401627217,-31.5037522224014,0 -64.79502241838935,-31.50370259607433,0 -64.79483486274925,-31.50365607526613,0 -64.79458107864258,-31.50364283259084,0 -64.79457075824503,-31.50364034481324,0 -64.79438662958384,-31.50361693468343,0 -64.79438216408637,-31.50361480185366,0 -64.79411919496025,-31.5035017173758,0 -64.79394854249438,-31.5033651318739,0 -64.79372112955561,-31.50323075610246,0 -64.79328752561081,-31.50304507774867,0 -64.79328202487312,-31.5030447747612,0 -64.79325359071849,-31.50303510521833,0 -64.79320199063865,-31.50301598256555,0 -64.7930058138694,-31.50300517747526,0 -64.79280552565965,-31.50305195273605,0 -64.79279755959107,-31.50306161439388,0 -64.79259194697713,-31.50317876720866,0 -64.79257676378815,-31.5031944477066,0 -64.79238829406556,-31.50335752218376,0 -64.79220918214568,-31.50353413977837,0 -64.79205404736911,-31.50371194820897,0 -64.79193152128894,-31.50379235453538,0 -64.79173770979081,-31.50385650641278,0 -64.79149602582149,-31.50400112253834,0 -64.79148239109141,-31.50399996222833,0 -64.79146042157954,-31.50400388967117,0 -64.7912283427362,-31.50405334436974,0 -64.79108166414552,-31.50397266855266,0 -64.7909382290897,-31.50386825460974,0 -64.79078314715149,-31.50381942625174,0 -64.79077605728979,-31.50382227928231,0 -64.79076515076302,-31.5038247644075,0 -64.79074719438189,-31.50383009039988,0 -64.79062008015221,-31.50385186672025,0 -64.79031290418719,-31.50387103311072,0 -64.79007593003183,-31.5038374149417,0 -64.79006064980162,-31.50383190593349,0 -64.79005406147166,-31.50382923650508,0 -64.78982797880408,-31.50371894927599,0 -64.78981688019336,-31.50371804552505,0 -64.78955321993818,-31.50369639550554,0 -64.7891882650088,-31.50374657299962,0 -64.78885388935325,-31.50359913247148,0 -64.78870731407439,-31.50349460046483,0 -64.7887065639455,-31.50348492374875,0 -64.78870744750749,-31.50336172197665,0 -64.7887574728982,-31.50317915606651,0 -64.78879013562502,-31.50296702042657,0 -64.7888901534141,-31.50273516153483,0 -64.7889586240789,-31.50255178746045,0 -64.78884139498537,-31.5024314177825,0 -64.78877544416588,-31.50227906100266,0 -64.78878983949468,-31.50207401814647,0 -64.78882859625227,-31.50196231521996,0 -64.78883401821129,-31.50195410942176,0 -64.78883583836468,-31.5019507876155,0 -64.788917088555,-31.50190317363763,0 -64.78905270333394,-31.50190102170109,0 -64.78922326441048,-31.50191568610941,0 -64.78943745586956,-31.50191944987371,0 -64.78960040474736,-31.50190759527051,0 -64.78973965801084,-31.50188905719201,0 
+					</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<name>Camino a Murua</name>
+				<styleUrl>#msn_ylw-pushpin6</styleUrl>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>
+						-64.78898173198382,-31.50188275445884,0 -64.78909119068526,-31.50172813824348,0 -64.78925635974312,-31.50157321412922,0 -64.78942210757978,-31.50132868586663,0 -64.78962841552823,-31.50107564470277,0 -64.78966534331455,-31.50099588321268,0 -64.78965365455973,-31.50086527646452,0 -64.78964959147619,-31.5007361844011,0 -64.78974411335645,-31.50056856803501,0 -64.7898455678025,-31.50035130306666,0 -64.78991336469375,-31.5001679584175,0 -64.78986654202862,-31.49989352645103,0 -64.78982874804554,-31.49972451661082,0 -64.78980440884628,-31.49959652049557,0 -64.78981487002488,-31.49942229135105,0 -64.78983725598749,-31.49927668374453,0 -64.78978742257645,-31.49918655423242,0 -64.78976751442782,-31.4991215351099,0 
+					</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<name>Camino a Lopez/Pereyra</name>
+				<styleUrl>#msn_ylw-pushpin6</styleUrl>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>
+						-64.78870534926449,-31.503468002612,0 -64.78862640900039,-31.50345249658634,0 -64.78852914198893,-31.5034561904937,0 -64.78852070293541,-31.50345562884799,0 -64.78841857111415,-31.50343538684083,0 -64.78838794517092,-31.50337332097195,0 -64.78839128168825,-31.50337001707225,0 -64.78842419098373,-31.50329073016075,0 -64.78842764346136,-31.50328208117778,0 -64.78842915968529,-31.50328198339113,0 -64.7884261419789,-31.50316811425145,0 -64.78841800123918,-31.50316277984979,0 -64.78835502264346,-31.50307911834104,0 -64.78826443537406,-31.50295715550459,0 -64.78820086308882,-31.50275926146276,0 -64.78817562512133,-31.50266664024531,0 -64.78829514052821,-31.50254379051989,0 -64.78830103986506,-31.50253505161118,0 -64.78827574091375,-31.50241730108691,0 -64.78814346481875,-31.50225058757055,0 -64.78813320940675,-31.50224645419567,0 -64.7879737954361,-31.5021106041786,0 -64.78787133424274,-31.50200952629219,0 -64.78785847838859,-31.50199220404689,0 -64.78778512862749,-31.50190722931929,0 -64.78775255626012,-31.50171726132751,0 -64.78773739005926,-31.5015780535008,0 -64.7876411532832,-31.50146112252866,0 -64.78762583813521,-31.50145081199473,0 -64.7876104682074,-31.50144046027841,0 -64.78746166481615,-31.50132417395033,0 -64.78723195156864,-31.50128226339906,0 -64.78722032956173,-31.501277238461,0 -64.78707233388694,-31.50123028583225,0 -64.78693297300741,-31.50109746382419,0 -64.7869225691701,-31.50109879002259,0 -64.78666397895807,-31.50105759190106,0 -64.78665345150743,-31.50105893073116,0 -64.78663590393043,-31.50106116250634,0 -64.78646736183708,-31.5011039517479,0 -64.78619215296681,-31.50114174091205,0 -64.78598147070376,-31.50125683941539,0 -64.78597385914991,-31.50126021020722,0 -64.7857820041006,-31.50134142756352,0 -64.78561299399294,-31.50141183333229,0 -64.78541230489307,-31.50141960619989,0 -64.78513286836062,-31.50146651768048,0 -64.78485036161216,-31.50152743967618,0 -64.78462225642858,-31.50153855138803,0 -64.78436910061002,-31.50166226211917,0 -64.7841789514908,-31.50178050199317,0 -64.78403189811064,-31.50192058319877,0 -64.78386205441231,-31.50215626458707,0 -64.78385880852507,-31.50215663192232,0 -64.78371684752602,-31.50238542945437,0 -64.78358524052059,-31.50259786175066,0 -64.78340883984654,-31.50286699364957,0 -64.78340946979388,-31.50286982923781,0 -64.78329184879119,-31.5030594581945,0 -64.78317747300827,-31.50317481776162,0 -64.7830811955053,-31.50321978319847,0 -64.7828773755412,-31.50330206507403,0 -64.78287422819641,-31.50330428963271,0 -64.78279043638011,-31.50338882000955,0 -64.78265010975079,-31.50352100066873,0 -64.78264801791516,-31.50352111729985,0 -64.78263663074047,-31.50352711836691,0 -64.78256362447601,-31.50360515968204,0 -64.78249461273687,-31.50375756893888,0 -64.78244425780454,-31.50396983978862,0 -64.7823808700214,-31.50422373921766,0 -64.78229283318254,-31.50440246472847,0 -64.78217033571327,-31.50452875937009,0 -64.78200525012817,-31.50463374540114,0 -64.78177699025665,-31.5046844204497,0 -64.78176507917493,-31.5046861418096,0 -64.78161114543805,-31.50474005527457,0 -64.78159746204172,-31.50474208956965,0 -64.78159159971186,-31.50474296118502,0 -64.78150143349509,-31.50476009711737,0 
+					</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<name>Camino a toma de Agua</name>
+				<styleUrl>#msn_ylw-pushpin6</styleUrl>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>
+						-64.78975294117342,-31.50053213119879,0 -64.78966192167685,-31.50041381733392,0 -64.78965800455224,-31.50041387024788,0 -64.78954812677452,-31.50032127173927,0 -64.78941095559941,-31.50018200892436,0 -64.78930089499023,-31.50010119949789,0 -64.78919458948987,-31.50002455576102,0 -64.78919252965261,-31.50002274600828,0 -64.78906904655277,-31.49992634256636,0 -64.78905049738567,-31.49991691152018,0 -64.78903023917961,-31.49990937528885,0 -64.78886957294775,-31.49977275484602,0 -64.7887127723158,-31.49967657190209,0 -64.78869560356672,-31.499667497982,0 -64.78868942459825,-31.49966492575636,0 -64.78867686230757,-31.49965840366236,0 -64.78856650031322,-31.49953135035682,0 -64.78844424918391,-31.49940825495765,0 -64.7884414516147,-31.4994018237822,0 -64.78843747976789,-31.49939537954416,0 -64.7884324929563,-31.49939108752931,0 -64.78842990091184,-31.49938783352584,0 -64.78831425368951,-31.49931893690328,0 -64.78830649360445,-31.49931549708297,0 -64.78819076392853,-31.49925846742609,0 -64.7881241996504,-31.49916776202026,0 -64.78811938700764,-31.49916367910941,0 -64.78805439950155,-31.49910622607546,0 -64.78798713371272,-31.49902866702563,0 
+					</coordinates>
+				</LineString>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>Referencias</name>
+			<Placemark>
+				<name>Tapera Antigua</name>
+				<LookAt>
+					<longitude>-64.80124812492477</longitude>
+					<latitude>-31.49436774668284</latitude>
+					<altitude>0</altitude>
+					<heading>-15.56264489909466</heading>
+					<tilt>39.2700638072556</tilt>
+					<range>54.62345813623254</range>
+					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+				</LookAt>
+				<styleUrl>#msn_T</styleUrl>
+				<Point>
+					<gx:drawOrder>1</gx:drawOrder>
+					<coordinates>-64.80120902198207,-31.49441384993259,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Cascada</name>
+				<LookAt>
+					<longitude>-64.79872055865314</longitude>
+					<latitude>-31.4930844483409</latitude>
+					<altitude>0</altitude>
+					<heading>-15.564013955659</heading>
+					<tilt>35.85053370822514</tilt>
+					<range>141.2687936444996</range>
+					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+				</LookAt>
+				<styleUrl>#msn_C0</styleUrl>
+				<Point>
+					<gx:drawOrder>1</gx:drawOrder>
+					<coordinates>-64.79874771136903,-31.49293601207082,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Refugio</name>
+				<LookAt>
+					<longitude>-64.78996409593654</longitude>
+					<latitude>-31.50159057984814</latitude>
+					<altitude>0</altitude>
+					<heading>-10.02649458679724</heading>
+					<tilt>30.00132608713844</tilt>
+					<range>295.3350200061851</range>
+					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+				</LookAt>
+				<styleUrl>#msn_campground</styleUrl>
+				<Point>
+					<gx:drawOrder>1</gx:drawOrder>
+					<coordinates>-64.78997702439497,-31.50200846301363,0</coordinates>
+				</Point>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>Trabajos de Restauracion</name>
+			<open>1</open>
+			<Folder>
+				<name>Carcabas</name>
+				<open>1</open>
+				<Folder>
+					<name>Carcaba 1</name>
+					<open>1</open>
+					<Placemark>
+						<name>Carcaba 1 en Restauracion</name>
+						<LookAt>
+							<longitude>-64.80257577385784</longitude>
+							<latitude>-31.50254950995435</latitude>
+							<altitude>0</altitude>
+							<heading>25.94920292188414</heading>
+							<tilt>30.94671539983928</tilt>
+							<range>124.9837485506395</range>
+							<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+						</LookAt>
+						<styleUrl>#msn_C</styleUrl>
+						<Point>
+							<gx:drawOrder>1</gx:drawOrder>
+							<coordinates>-64.80287474191067,-31.50260170579528,0</coordinates>
+						</Point>
+					</Placemark>
+					<Placemark>
+						<name>Superficie contenida</name>
+						<description>En esta parte se trabajo conteniendo los desprendimientos de tierra con una tecnica que implica realizar una contencion con piedras tipo pircas.
+El trabajo llevo 6 dias con un equipo de 4 personas mas la camioneta de bosques de agua para realizar los movimientos de piedras. 
+
+(En la esquina sur de la carcaba se realizo un mix de tecnicas para poder detener la erocion en un sector tipo pozo) la cual consistio en realizar una pirca baja de unos 30 cm y realizar un corte a 45 grados en la superficie de la carcaba y plantar champas de la zona para que la misma detenga la erocion. Esta tecnica posiblemente sea aplicada en distintas zonas de la reserva pero para ello devemos esperar que crescan de estas champas o en su defecto traerlas de otras partes)</description>
+						<styleUrl>#msn_ylw-pushpin6</styleUrl>
+						<LineString>
+							<tessellate>1</tessellate>
+							<coordinates>
+								-64.802833556113,-31.50264940821833,0 -64.8028179843226,-31.50265488780634,0 -64.80281311985937,-31.50265266980483,0 -64.80281386401992,-31.50264234712879,0 -64.80282459928199,-31.50263549652237,0 -64.8028185799197,-31.5026237885254,0 -64.80282105254521,-31.50261380846954,0 -64.80284105841805,-31.50260936901714,0 -64.80286017501261,-31.50259529092232,0 -64.80287551179032,-31.50258118326078,0 -64.80287872522284,-31.50257133002098,0 -64.80285460702993,-31.50256533039043,0 -64.80284998286557,-31.50256448062407,0 -64.80283872290788,-31.50256025454498,0 -64.80285055338385,-31.502548345765,0 -64.80286228802942,-31.50253479861646,0 -64.802879639875,-31.50252200995361,0 -64.80289690413206,-31.50252153630037,0 -64.80291052308274,-31.5025146620016,0 -64.80292375516284,-31.50249576990819,0 -64.80291943161018,-31.50248197095782,0 -64.80292498627838,-31.50245923367373,0 -64.80291922695541,-31.5024492083402,0 -64.80290433864974,-31.50244441638887,0 -64.80290026494326,-31.50243055989572,0 -64.80291320816248,-31.50242124261798,0 -64.8029187947193,-31.50240952964216,0 -64.8029232657813,-31.50239522866599,0 -64.80291302947576,-31.502378805364,0 -64.8029142204944,-31.50237550814163,0 -64.80291440675038,-31.50237452785959,0 -64.80292616226077,-31.50236341076346,0 -64.80294079407827,-31.50235502879113,0 
+							</coordinates>
+						</LineString>
+					</Placemark>
+				</Folder>
+			</Folder>
+			<Folder>
+				<name>Reforestacion</name>
+				<open>1</open>
+				<Folder>
+					<name>Areas de Monitoreo</name>
+					<Folder>
+						<name>Zona Becerra Sur</name>
+						<open>1</open>
+						<Folder>
+							<name>Items</name>
+							<Placemark>
+								<name>BS2</name>
+								<LookAt>
+									<longitude>-64.80189790772084</longitude>
+									<latitude>-31.50273203543985</latitude>
+									<altitude>0</altitude>
+									<heading>-0.001868160008761328</heading>
+									<tilt>30.00363435327203</tilt>
+									<range>809.4300588831372</range>
+									<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+								</LookAt>
+								<styleUrl>#msn_parks</styleUrl>
+								<Point>
+									<gx:drawOrder>1</gx:drawOrder>
+									<coordinates>-64.8027087612866,-31.50357011530064,0</coordinates>
+								</Point>
+							</Placemark>
+							<Placemark>
+								<name>BS1</name>
+								<LookAt>
+									<longitude>-64.80407807939504</longitude>
+									<latitude>-31.50230175067695</latitude>
+									<altitude>0</altitude>
+									<heading>-0.0005539150708631055</heading>
+									<tilt>28.01603301550658</tilt>
+									<range>600.6929507169133</range>
+									<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+								</LookAt>
+								<styleUrl>#msn_parks</styleUrl>
+								<Point>
+									<gx:drawOrder>1</gx:drawOrder>
+									<coordinates>-64.8061427205471,-31.5031268767488,0</coordinates>
+								</Point>
+							</Placemark>
+						</Folder>
+						<Folder>
+							<name>Poligonos</name>
+							<Placemark>
+								<name>Zona BS1</name>
+								<description>Descripcion del Area.
+Perfil de Suelo: Pobre, de 0 a 50cm aprox. (medir)
+Tipo de suelo: Duro, compactado
+Orientacion de la pendiente: NE
+
+Observaciones noviembre 2024:
+Crecimiento de pastizales sectorizado.
+Arboles plantados presentan rebrotes luego de las primeras lluvias
+Muchos arboles sufrieron a causa de la epoca seca, algunos presentan rebrotes desde la base otros (menor cantidad) se secaron.</description>
+								<styleUrl>#msn_ylw-pushpin23</styleUrl>
+								<Polygon>
+									<tessellate>1</tessellate>
+									<outerBoundaryIs>
+										<LinearRing>
+											<coordinates>
+												-64.80685682303074,-31.50180935377304,0 -64.8066667402236,-31.50325733109584,0 -64.80299414114012,-31.50362429339802,0 -64.80290326839825,-31.50338676547037,0 -64.80285023147441,-31.50326913903254,0 -64.80278194365896,-31.50318788724434,0 -64.80286264928644,-31.50312264793289,0 -64.80287241301372,-31.50311200631261,0 -64.8028833044133,-31.50305449629296,0 -64.80286094464589,-31.50301902337096,0 -64.80279912782511,-31.5030198565612,0 -64.80274795636541,-31.50297792087178,0 -64.80270973651591,-31.50293303401243,0 -64.80273634661513,-31.50292591796575,0 -64.80291028053348,-31.50289045938038,0 -64.80310319361085,-31.5028077864876,0 -64.80384436798371,-31.50281214432733,0 -64.80403024481157,-31.50283253836088,0 -64.8040556710301,-31.5028290608968,0 -64.80433110778597,-31.50290632547965,0 -64.80462561315184,-31.50295976012199,0 -64.80478174486622,-31.50297900237784,0 -64.80490210479059,-31.50299400372951,0 -64.80530353742792,-31.50295949362589,0 -64.8054723166014,-31.50287978935279,0 -64.80559240631045,-31.5027845300604,0 -64.805707429962,-31.50267718553088,0 -64.80580599933458,-31.50256798245124,0 -64.80581111362632,-31.50256049584172,0 -64.80584792508577,-31.50246553621758,0 -64.80587704760831,-31.50238836438489,0 -64.80593924181191,-31.50232091458314,0 -64.80602762469289,-31.50221473111654,0 -64.80621225975011,-31.5021122834766,0 -64.80669632134902,-31.50186178338564,0 -64.80685682303074,-31.50180935377304,0 
+											</coordinates>
+										</LinearRing>
+									</outerBoundaryIs>
+								</Polygon>
+							</Placemark>
+							<Placemark>
+								<name>Zona BS2</name>
+								<description>Descripcion del area: 
+Zona Mallin Temporal. (Esta zona recibe agua desde el sur, este y oeste, drenando hacia el norte, hacia la carcaba 1 que esta en proceso de restauracion al4/11/2024
+
+Perfil de suelo:
+Tipo de suelo: mallin
+
+
+Observaciones:
+Noviembre 2024.
+Luego de las primeras lluvias podemos notar que el sector presenta agua superficial.
+De momento los arboles plantados alli se encuentran vivos pero estan en observacion ya que al estar en un area donde se estanca el agua es probable que no sobrevivan (segun nuestras observaciones hasta el momento)</description>
+								<styleUrl>#msn_ylw-pushpin32</styleUrl>
+								<Polygon>
+									<tessellate>1</tessellate>
+									<outerBoundaryIs>
+										<LinearRing>
+											<coordinates>
+												-64.80218308493586,-31.5037094209561,0 -64.80219459102258,-31.50350643828018,0 -64.80227827764168,-31.50335789967618,0 -64.80219711508423,-31.50319404056228,0 -64.80188179529446,-31.50302075549281,0 -64.80189187749723,-31.50293306513248,0 -64.80189461504774,-31.50285715182138,0 -64.80192061620666,-31.50274545119973,0 -64.80197716958541,-31.50268098308062,0 -64.80205601718924,-31.50269667250246,0 -64.8021931509064,-31.50276686698337,0 -64.80231223556338,-31.50282264642056,0 -64.80231977089197,-31.50282643171676,0 -64.80232544787371,-31.50282829214117,0 -64.80243947031043,-31.50288533998807,0 -64.80255268940489,-31.50289539644809,0 -64.80256663296592,-31.50289885308652,0 -64.80257536932521,-31.50290055105797,0 -64.80271010179733,-31.50293109985106,0 -64.80274570862028,-31.50297340258438,0 -64.80280065340419,-31.50301835971405,0 -64.80284810458146,-31.50301907399498,0 -64.80285602567234,-31.50301884747095,0 -64.80286235507089,-31.50301883577757,0 -64.80288167912644,-31.50305350558929,0 -64.80287195128824,-31.50311391537436,0 -64.80278509085451,-31.50318859418378,0 -64.80280402681828,-31.50321244618939,0 -64.802856902687,-31.50327918679907,0 -64.80289890946476,-31.50336413554995,0 -64.80291218625102,-31.50341733449475,0 -64.80295016600682,-31.50350307903991,0 -64.80299126524048,-31.5036164760163,0 -64.80299872613506,-31.50362385538926,0 -64.80218308493586,-31.5037094209561,0 
+											</coordinates>
+										</LinearRing>
+									</outerBoundaryIs>
+								</Polygon>
+							</Placemark>
+						</Folder>
+					</Folder>
+				</Folder>
+			</Folder>
+		</Folder>
+		<Folder>
+			<name>Observaciones</name>
+			<open>1</open>
+			<Folder id="2">
+				<name>Subida 17/10</name>
+				<open>1</open>
+				<Style id="145">
+					<IconStyle id="146">
+						<colorMode>normal</colorMode>
+						<scale>1</scale>
+						<heading>0</heading>
+						<Icon id="147">
+							<href>files/red-pin-down.png</href>
+						</Icon>
+					</IconStyle>
+				</Style>
+				<Placemark id="4">
+					<name>Diente de leon</name>
+					<styleUrl>#5</styleUrl>
+					<Point id="3">
+						<coordinates>-64.78956599999999,-31.500725,2272</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark id="9">
+					<name>Tabaquillo 2</name>
+					<description>Entre este y el de la anterior foto hay 6m sin ningun otro ejemplar</description>
+					<styleUrl>#10</styleUrl>
+					<Point id="8">
+						<coordinates>-64.789551,-31.500822,2271</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark id="14">
+					<name>Límite con perdida de suelo! A futuro pueden pasar animales por aca</name>
+					<styleUrl>#151</styleUrl>
+					<Point id="13">
+						<coordinates>-64.781023,-31.505714,2231</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark id="19">
+					<name>Especie nativa volviendo a un año de clausurada las 140</name>
+					<styleUrl>#20</styleUrl>
+					<Point id="18">
+						<coordinates>-64.794938,-31.498363,2289</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark id="24">
+					<name>Árbol seco tree nations</name>
+					<description>Area circundante al puesto</description>
+					<styleUrl>#25</styleUrl>
+					<Point id="23">
+						<coordinates>-64.789405,-31.502008,2281</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark id="29">
+					<name>Observacion</name>
+					<description><![CDATA[Sector con arboles que:<img style="max-width:500px;" src="files/Arbol que sufrio la seca.jpg">
+Presentan mucha perdida de hojas
+Rebrotes desde la base.
+Chequeae perfil de suelo. Al parecer es bastante poco y se notaba que en este area sufrieron mas la seca]]></description>
+					<styleUrl>#msn_grn-blank0</styleUrl>
+					<Point id="28">
+						<coordinates>-64.8035768527868,-31.50317912980966,2307</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark id="34">
+					<name>Árbol con reparo del viento</name>
+					<description>Zona de arboles sin NPK al reparo del viento sur. Se observan 5 ejemplares con buen tamaño. Y en general el aector donde ae ubican hacia el norte hasta el camino pueden observarse gran cantidad de arboles.</description>
+					<styleUrl>#35</styleUrl>
+					<Point id="33">
+						<coordinates>-64.789213,-31.502474,2282</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark id="44">
+					<name>Comedero de puma. (encontré una trampa que seguro usaba Nacho el vecino)</name>
+					<styleUrl>#45</styleUrl>
+					<Point id="43">
+						<coordinates>-64.796485,-31.491689,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark id="49">
+					<name>Punto a mejorar</name>
+					<description>Agregar piedra para evitar la entrada de ovejas</description>
+					<styleUrl>#msn_grn-blank2</styleUrl>
+					<Point id="48">
+						<coordinates>-64.8072443726598,-31.49604738295557,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark id="54">
+					<name>Zona con tabaquillos mordidos</name>
+					<description>Por el tipo de huella puede ser un lugar donde viene el chancho</description>
+					<styleUrl>#55</styleUrl>
+					<Point id="53">
+						<coordinates>-64.782787,-31.505472,2237</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark id="59">
+					<name>Observacion positiva</name>
+					<description><![CDATA[En este sector aun no zonificado para hacer el seguimiento podemos observar ejemplares de tabaquilos insertados en la plantacion de 2023/2024 en muy hermoso estado. (Grandes y rustificados) 
+<img style="max-width:500px;" src="files/Ejemplar Lindo.jpg">]]></description>
+					<styleUrl>#msn_grn-blank4</styleUrl>
+					<Point id="58">
+						<coordinates>-64.805021,-31.498116,2291</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark id="64">
+					<name>17/10/2024</name>
+					<description>1 año de plantado</description>
+					<styleUrl>#65</styleUrl>
+					<Point id="63">
+						<coordinates>-64.794853,-31.500461,2300</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark id="69">
+					<name>Árbol entrada al Refu</name>
+					<description>Llovio en la semana</description>
+					<styleUrl>#70</styleUrl>
+					<Point id="68">
+						<coordinates>-64.789756,-31.501867,2282</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark id="74">
+					<name>Árbol rebotando</name>
+					<description><![CDATA[Posiblemente este arbol haya sido mordido por una vaca que entro del vecino
+<img style="max-width:500px;" src="files/Ejemplar rebrotando.jpg">]]></description>
+					<styleUrl>#msn_grn-blank3</styleUrl>
+					<Point id="73">
+						<coordinates>-64.80497800000001,-31.499063,2306</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark id="79">
+					<name>Ejemplar en zona de mayin</name>
+					<description>A seguir proceso</description>
+					<styleUrl>#80</styleUrl>
+					<Point id="78">
+						<coordinates>-64.78876,-31.501893,2273</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark id="84">
+					<name>Zona con árboles rústicos y grandes</name>
+					<styleUrl>#msn_grn-blank2</styleUrl>
+					<Point id="83">
+						<coordinates>-64.804033,-31.495336,2277</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark id="89">
+					<name>Tabaquillos mordido</name>
+					<styleUrl>#900</styleUrl>
+					<Point id="88">
+						<coordinates>-64.781031,-31.505731,2228</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark id="99">
+					<name>Marcas de Jabali</name>
+					<description><![CDATA[Sector donde se pueden observar arboles en buen estado pero al rededor de los mismos se observan marcas como de jabali
+
+<img style="max-width:500px;" src="files/Marcas Jabali.jpg">]]></description>
+					<styleUrl>#msn_grn-blank0</styleUrl>
+					<Point id="98">
+						<coordinates>-64.804186,-31.501251,2302</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark id="104">
+					<name>Tabaquillos del primer año</name>
+					<styleUrl>#105</styleUrl>
+					<Point id="103">
+						<coordinates>-64.787716,-31.499574,2263</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark id="109">
+					<name>Maroma problematica</name>
+					<description>Hay que estar constantemente atento a que en la epoca de sequias no pasen animales (que no queremos en la reserva como vacas obejas o cabras)</description>
+					<styleUrl>#msn_grn-blank2</styleUrl>
+					<Point id="108">
+						<coordinates>-64.799683,-31.493606,2239</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark id="114">
+					<name>Tabaquillo</name>
+					<styleUrl>#115</styleUrl>
+					<Point id="113">
+						<coordinates>-64.789554,-31.500804,2275</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark id="119">
+					<name>Tabaquillos antiguo dentro de las 140</name>
+					<styleUrl>#1200</styleUrl>
+					<Point id="118">
+						<coordinates>-64.796161,-31.491543,2220</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark id="124">
+					<name>No observo tabaquillos del primer año. sector duro</name>
+					<styleUrl>#125</styleUrl>
+					<Point id="123">
+						<coordinates>-64.78854200000001,-31.49979799999999,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark id="129">
+					<name>Árbol abuelo dentro de la reserva</name>
+					<styleUrl>#130</styleUrl>
+					<Point id="128">
+						<coordinates>-64.795238,-31.494691,2284</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark id="134">
+					<name>Tabaquillo Plantado 1</name>
+					<description><![CDATA[<img style="max-width:500px;" src="files/Imagen de WhatsApp 2024-11-04 a las 17.46.31_0d8edb1e.jpg">]]></description>
+					<styleUrl>#1351</styleUrl>
+					<Point id="133">
+						<coordinates>-64.80681910541522,-31.50185388772109,2310</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark id="139">
+					<name>Observacion positiva</name>
+					<description><![CDATA[En este sector aun no zonificado para hacer el seguimiento podemos observar ejemplares de tabaquilos insertados en la plantacion de 2023/2024 en muy hermoso estado. (Grandes y rustificados)
+
+<img style="max-width:500px;" src="files/Ejemplar Lindo 2.jpg">Zona con arboles plantados que presentan]]></description>
+					<styleUrl>#msn_grn-blank1</styleUrl>
+					<Point id="138">
+						<coordinates>-64.80142600000001,-31.498419,2278</coordinates>
+					</Point>
+				</Placemark>
+			</Folder>
+		</Folder>
+	</Folder>
+</Document>
+</kml>

@@ -1,5 +1,8 @@
-# Contract
-**/target
+# Soroban
+target
+contract/target
+contracts/nft/test_snapshots
+contracts/oracle/test_snapshots
 
 # Dapp
 **/.env

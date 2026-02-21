@@ -1,16 +1,16 @@
-import { useState, useEffect } from 'react';
-import { kml } from '@tmcw/togeojson';
-import { StellarWalletsKit } from '@creit-tech/stellar-wallets-kit/sdk';
-import { defaultModules } from '@creit-tech/stellar-wallets-kit/modules/utils';
-import './App.css';
-import MapComponent from './components/MapComponent';
-import type { LotFeature } from './components/MapComponent';
+import { useState, useEffect } from "react";
+import { kml } from "@tmcw/togeojson";
+import { StellarWalletsKit } from "@creit-tech/stellar-wallets-kit/sdk";
+import { defaultModules } from "@creit-tech/stellar-wallets-kit/modules/utils";
+import "./App.css";
+import MapComponent from "./components/MapComponent";
+import type { LotFeature } from "./components/MapComponent";
 
 // Init the kit globally
 StellarWalletsKit.init({
-  network: 'TESTNET' as any,
-  selectedWalletId: 'freighter',
-  modules: defaultModules()
+  network: "TESTNET" as any,
+  selectedWalletId: "freighter",
+  modules: defaultModules(),
 });
 
 function App() {
@@ -18,46 +18,49 @@ function App() {
   const [selectedLotIds, setSelectedLotIds] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [walletConnected, setWalletConnected] = useState(false);
-  const [publicKey, setPublicKey] = useState<string>('');
+  const [publicKey, setPublicKey] = useState<string>("");
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const loadKMLData = async () => {
       try {
-        const response = await fetch('/Reserva%20Bosques%20de%20Agua.kml');
-        if (!response.ok) throw new Error('Network response was not ok');
+        const response = await fetch("/Reserva%20Bosques%20de%20Agua.kml");
+        if (!response.ok) throw new Error("Network response was not ok");
         const text = await response.text();
-        const kmlDoc = new DOMParser().parseFromString(text, 'text/xml');
+        const kmlDoc = new DOMParser().parseFromString(text, "text/xml");
         const geojson = kml(kmlDoc);
 
         // Filter valid polygon features
-        const features = geojson.features.filter(f =>
-          f.geometry && (f.geometry.type === 'Polygon' || f.geometry.type === 'MultiPolygon')
+        const features = geojson.features.filter(
+          (f) =>
+            f.geometry &&
+            (f.geometry.type === "Polygon" ||
+              f.geometry.type === "MultiPolygon"),
         );
 
         if (features.length === 0) return;
 
         // Use dynamic import for turf to avoid potential vite build issues, or just import at top.
-        const turf = await import('@turf/turf');
+        const turf = await import("@turf/turf");
         const polyFc = turf.featureCollection(features as any);
         const bbox = turf.bbox(polyFc);
         const totalAreaSqM = turf.area(polyFc);
 
         // Target 500 lots. Start by estimating the side of each square.
         let lotSideKm = Math.sqrt(totalAreaSqM / 500) / 1000;
-        let grid = turf.squareGrid(bbox, lotSideKm, { units: 'kilometers' });
+        let grid = turf.squareGrid(bbox, lotSideKm, { units: "kilometers" });
 
-        let intersecting = grid.features.filter(cell =>
-          features.some(poly => turf.booleanIntersects(cell, poly as any))
+        let intersecting = grid.features.filter((cell) =>
+          features.some((poly) => turf.booleanIntersects(cell, poly as any)),
         );
 
         // Adjust resolution if we didn't get enough lots inside the polygon
         let attempts = 0;
         while (intersecting.length < 500 && attempts < 10) {
           lotSideKm *= 0.9;
-          grid = turf.squareGrid(bbox, lotSideKm, { units: 'kilometers' });
-          intersecting = grid.features.filter(cell =>
-            features.some(poly => turf.booleanIntersects(cell, poly as any))
+          grid = turf.squareGrid(bbox, lotSideKm, { units: "kilometers" });
+          intersecting = grid.features.filter((cell) =>
+            features.some((poly) => turf.booleanIntersects(cell, poly as any)),
           );
           attempts++;
         }
@@ -67,17 +70,17 @@ function App() {
 
         // Shuffle arrays to scatter the donated ones, or just randomly set 83 donated.
         // Let's create an array of 83 true and 417 false, then shuffle.
-        const statuses = Array(500).fill('available');
-        for (let i = 0; i < 83; i++) statuses[i] = 'donated';
+        const statuses = Array(500).fill("available");
+        for (let i = 0; i < 83; i++) statuses[i] = "donated";
         statuses.sort(() => Math.random() - 0.5);
 
         const parsedLots: LotFeature[] = exact500.map((f, idx) => {
           return {
             id: `lot-${idx}`,
-            name: `Parcela BDA-${(idx + 1).toString().padStart(3, '0')}`,
+            name: `Parcela BDA-${(idx + 1).toString().padStart(3, "0")}`,
             price: 50 + Math.floor(Math.random() * 50),
-            status: statuses[idx] as 'donated' | 'available',
-            geometry: f.geometry
+            status: statuses[idx] as "donated" | "available",
+            geometry: f.geometry,
           };
         });
 
@@ -93,17 +96,20 @@ function App() {
   }, []);
 
   const handleToggleLot = (lot: LotFeature) => {
-    if (lot.status === 'donated') return; // Cannot select donated
+    if (lot.status === "donated") return; // Cannot select donated
 
-    setSelectedLotIds(prev =>
+    setSelectedLotIds((prev) =>
       prev.includes(lot.id)
-        ? prev.filter(id => id !== lot.id)
-        : [...prev, lot.id]
+        ? prev.filter((id) => id !== lot.id)
+        : [...prev, lot.id],
     );
   };
 
-  const selectedLotsCards = lots.filter(l => selectedLotIds.includes(l.id));
-  const totalAmount = selectedLotsCards.reduce((acc, curr) => acc + curr.price, 0);
+  const selectedLotsCards = lots.filter((l) => selectedLotIds.includes(l.id));
+  const totalAmount = selectedLotsCards.reduce(
+    (acc, curr) => acc + curr.price,
+    0,
+  );
 
   const handleConnectWallet = async () => {
     try {
@@ -122,9 +128,11 @@ function App() {
     }
 
     // Process "donation/buy" -> update local state -> show success
-    setLots(prev => prev.map(l =>
-      selectedLotIds.includes(l.id) ? { ...l, status: 'donated' } : l
-    ));
+    setLots((prev) =>
+      prev.map((l) =>
+        selectedLotIds.includes(l.id) ? { ...l, status: "donated" } : l,
+      ),
+    );
     setSelectedLotIds([]);
     setShowModal(true);
   };
@@ -144,13 +152,23 @@ function App() {
           <div className="modal-content">
             <div className="modal-header">
               <h3>¡Gracias por tu contribución! 🌿</h3>
-              <button className="close-btn" onClick={() => setShowModal(false)}>&times;</button>
+              <button className="close-btn" onClick={() => setShowModal(false)}>
+                &times;
+              </button>
             </div>
-            <p>Tu donación ha sido registrada en la red Stellar. Haz recibido los NFTs correspondientes a las parcelas que ahora son parte de la reserva natural de las Sierras de Córdoba.</p>
-            <p style={{ marginTop: '1rem', color: '#10b981', fontWeight: 600 }}>
+            <p>
+              Tu donación ha sido registrada en la red Stellar. Haz recibido los
+              NFTs correspondientes a las parcelas que ahora son parte de la
+              reserva natural de las Sierras de Córdoba.
+            </p>
+            <p style={{ marginTop: "1rem", color: "#10b981", fontWeight: 600 }}>
               Lotes reforestados y asegurados con éxito.
             </p>
-            <button className="donate-btn" style={{ marginTop: '1.5rem' }} onClick={() => setShowModal(false)}>
+            <button
+              className="donate-btn"
+              style={{ marginTop: "1.5rem" }}
+              onClick={() => setShowModal(false)}
+            >
               Ver Mapa Actualizado
             </button>
           </div>
@@ -159,11 +177,13 @@ function App() {
 
       <header className="header">
         <h1>
-          <span style={{ fontSize: '1.8rem' }}>🌲</span>
+          <span style={{ fontSize: "1.8rem" }}>🌲</span>
           Bosques de Agua (BDA)
         </h1>
         <button className="connect-wallet-btn" onClick={handleConnectWallet}>
-          {walletConnected ? `✅ ${publicKey.slice(0, 4)}...${publicKey.slice(-4)}` : '🔗 Conectar Wallet Stellar'}
+          {walletConnected
+            ? `✅ ${publicKey.slice(0, 4)}...${publicKey.slice(-4)}`
+            : "🔗 Conectar Wallet Stellar"}
         </button>
       </header>
 
@@ -200,17 +220,26 @@ function App() {
             {selectedLotsCards.length === 0 ? (
               <div className="empty-state">
                 <div className="empty-icon">🗺️</div>
-                <p>Haz clic en los lotes disponibles del mapa para agregarlos a tu donación.</p>
+                <p>
+                  Haz clic en los lotes disponibles del mapa para agregarlos a
+                  tu donación.
+                </p>
               </div>
             ) : (
               <div className="selected-lots-list">
-                {selectedLotsCards.map(lot => (
+                {selectedLotsCards.map((lot) => (
                   <div key={lot.id} className="lot-item">
                     <div className="lot-info">
                       <h4>{lot.name}</h4>
                       <p>Parcela Conservación</p>
                     </div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "1rem",
+                      }}
+                    >
                       <span className="lot-price">{lot.price} XLM</span>
                       <button
                         className="remove-btn"

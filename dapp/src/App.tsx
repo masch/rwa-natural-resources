@@ -6,6 +6,7 @@ import "./App.css";
 import MapComponent from "./components/MapComponent";
 import type { LotFeature } from "./components/MapComponent";
 import BoscoraNFT from "./contracts/soroban_boscora_nft";
+import { useTranslation } from "react-i18next";
 
 // Init the kit globally
 StellarWalletsKit.init({
@@ -21,6 +22,11 @@ function App() {
   const [walletConnected, setWalletConnected] = useState(false);
   const [publicKey, setPublicKey] = useState<string>("");
   const [showModal, setShowModal] = useState(false);
+  const { t, i18n } = useTranslation();
+
+  const toggleLanguage = () => {
+    i18n.changeLanguage(i18n.language.startsWith('es') ? 'en' : 'es');
+  };
 
   useEffect(() => {
     const loadKMLData = async () => {
@@ -126,7 +132,7 @@ function App() {
 
   const handleDonate = async () => {
     if (!walletConnected || selectedLotIds.length === 0) {
-      alert("Please connect your Stellar wallet and select at least one lot.");
+      alert(t('sidebar.alert_connect'));
       return;
     }
 
@@ -177,7 +183,7 @@ function App() {
       setShowModal(true);
     } catch (e) {
       console.error("Failed to mint NFT:", e);
-      alert("Failed to mint NFT. See console for details.");
+      alert(t('sidebar.alert_fail'));
     } finally {
       setIsLoading(false);
     }
@@ -188,8 +194,8 @@ function App() {
       {isLoading && (
         <div className="loading-overlay">
           <div className="spinner"></div>
-          <h2>Cargando Bosques de Agua...</h2>
-          <p>Sincronizando KMZ y Oracle Datos</p>
+          <h2>{t('app.loading')}</h2>
+          <p>{t('app.syncing')}</p>
         </div>
       )}
 
@@ -197,25 +203,21 @@ function App() {
         <div className="modal-overlay">
           <div className="modal-content">
             <div className="modal-header">
-              <h3>¡Gracias por tu contribución! 🌿</h3>
+              <h3>{t('modal.title')}</h3>
               <button className="close-btn" onClick={() => setShowModal(false)}>
                 &times;
               </button>
             </div>
-            <p>
-              Tu donación ha sido registrada en la red Stellar. Haz recibido los
-              NFTs correspondientes a las parcelas que ahora son parte de la
-              reserva natural de las Sierras de Córdoba.
-            </p>
+            <p>{t('modal.p1')}</p>
             <p style={{ marginTop: "1rem", color: "#10b981", fontWeight: 600 }}>
-              Lotes reforestados y asegurados con éxito.
+              {t('modal.p2')}
             </p>
             <button
               className="donate-btn"
               style={{ marginTop: "1.5rem" }}
               onClick={() => setShowModal(false)}
             >
-              Ver Mapa Actualizado
+              {t('modal.btn')}
             </button>
           </div>
         </div>
@@ -224,13 +226,18 @@ function App() {
       <header className="header">
         <h1>
           <span style={{ fontSize: "1.8rem" }}>🌲</span>
-          Bosques de Agua (BDA)
+          {t('app.title')}
         </h1>
-        <button className="connect-wallet-btn" onClick={handleConnectWallet}>
-          {walletConnected
-            ? `✅ ${publicKey.slice(0, 4)}...${publicKey.slice(-4)}`
-            : "🔗 Conectar Wallet Stellar"}
-        </button>
+        <div style={{ display: "flex", gap: "10px" }}>
+          <button className="connect-wallet-btn" style={{ background: "transparent", color: "white", padding: "8px 12px" }} onClick={toggleLanguage}>
+            {i18n.language.startsWith('es') ? '🇺🇸 EN' : '🇪🇸 ES'}
+          </button>
+          <button className="connect-wallet-btn" onClick={handleConnectWallet}>
+            {walletConnected
+              ? `${t('app.connected')} ${publicKey.slice(0, 4)}...${publicKey.slice(-4)}`
+              : `🔗 ${t('app.connect')}`}
+          </button>
+        </div>
       </header>
 
       <main className="main-content">
@@ -244,22 +251,22 @@ function App() {
           <div className="map-legend">
             <div className="legend-item">
               <div className="legend-color donated"></div>
-              <span>Donado (Reserva Natural)</span>
+              <span>{t('map.legend.donated')}</span>
             </div>
             <div className="legend-item">
               <div className="legend-color available"></div>
-              <span>Disponible para Conservación</span>
+              <span>{t('map.legend.available')}</span>
             </div>
             <div className="legend-item">
               <div className="legend-color selected"></div>
-              <span>Seleccionado</span>
+              <span>{t('map.legend.selected')}</span>
             </div>
           </div>
         </div>
 
         <aside className="sidebar">
           <div className="sidebar-header">
-            <h2>Tu Contribución</h2>
+            <h2>{t('sidebar.title')}</h2>
           </div>
 
           <div className="sidebar-content">
@@ -267,8 +274,7 @@ function App() {
               <div className="empty-state">
                 <div className="empty-icon">🗺️</div>
                 <p>
-                  Haz clic en los lotes disponibles del mapa para agregarlos a
-                  tu donación.
+                  {t('sidebar.empty_line1')} <br /> {t('sidebar.empty_line2')}
                 </p>
               </div>
             ) : (
@@ -277,7 +283,7 @@ function App() {
                   <div key={lot.id} className="lot-item">
                     <div className="lot-info">
                       <h4>{lot.name}</h4>
-                      <p>Parcela Conservación</p>
+                      <p>{t('sidebar.lot_subtitle')}</p>
                     </div>
                     <div
                       style={{
@@ -305,7 +311,7 @@ function App() {
 
           <div className="sidebar-footer">
             <div className="total-section">
-              <span className="total-label">Subtotal</span>
+              <span className="total-label">{t('sidebar.subtotal')}</span>
               <span className="total-amount">
                 {totalAmount} {import.meta.env.PUBLIC_DONATION_ASSET || "USDC"}
               </span>
@@ -316,7 +322,7 @@ function App() {
               disabled={selectedLotsCards.length === 0}
               onClick={handleDonate}
             >
-              Donar y Obtener NFT
+              {t('sidebar.donate_btn')}
             </button>
           </div>
         </aside>

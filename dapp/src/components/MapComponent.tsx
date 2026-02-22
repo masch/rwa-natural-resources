@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
+import { useTranslation } from "react-i18next";
 
 mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN;
 
@@ -25,6 +26,7 @@ const MapComponent: React.FC<MapComponentProps> = ({
 }) => {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
+  const { t } = useTranslation();
 
   // 1. Init map only once
   useEffect(() => {
@@ -154,9 +156,9 @@ const MapComponent: React.FC<MapComponentProps> = ({
             const html = `
                             <div style="color: #333; font-family: 'Outfit', sans-serif;">
                                 <h4 style="margin: 0 0 5px 0; font-size: 15px;">🌳 ${props.name}</h4>
-                                <p style="margin: 0; font-size: 13px;">Esta parcela es parte de la Reserva Natural.</p>
-                                <p style="margin: 5px 0 0 0; font-size: 13px; font-weight: bold; color: #10b981;">Valor ecológico: ${props.price} ${import.meta.env.PUBLIC_DONATION_ASSET || "USDC"}</p>
-                                <p style="margin: 5px 0 0 0; font-size: 11px; color: #666;">Protegido mediante NFT en Stellar</p>
+                                <p style="margin: 0; font-size: 13px;">${t('popup.partOf')}</p>
+                                <p style="margin: 5px 0 0 0; font-size: 13px; font-weight: bold; color: #10b981;">${t('popup.value')} ${props.price} ${import.meta.env.PUBLIC_DONATION_ASSET || "USDC"}</p>
+                                <p style="margin: 5px 0 0 0; font-size: 11px; color: #666;">${t('popup.protected')}</p>
                             </div>
                         `;
             new mapboxgl.Popup({ className: "custom-popup", maxWidth: "300px" })

@@ -125,6 +125,10 @@ function App() {
     0,
   );
 
+  const totalLots = lots.length;
+  const donatedLots = lots.filter((l) => l.status === "donated").length;
+  const progressPercentage = totalLots > 0 ? (donatedLots / totalLots) * 100 : 0;
+
   const handleConnectWallet = async () => {
     try {
       const { address } = await StellarWalletsKit.authModal();
@@ -278,7 +282,45 @@ function App() {
             />
           )}
 
-          <div className="map-legend">
+          <div className="map-legend" style={{ minWidth: "300px" }}>
+            {totalLots > 0 && (
+              <div style={{ marginBottom: "1rem" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1rem", gap: "1.5rem" }}>
+                  <div style={{ display: "flex", flexDirection: "column", gap: "4px", flex: 1 }}>
+                    <span style={{ fontSize: "1.05rem", fontWeight: 700, color: "#fff" }}>
+                      {t("map.progress_title")}
+                    </span>
+                    <span style={{ fontSize: "0.85rem", color: "#a1a1aa" }}>
+                      <strong style={{ color: "#fff" }}>{donatedLots}</strong> / {totalLots}{" "}
+                      {t("map.progress_subtitle")}
+                    </span>
+                  </div>
+                  <div style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    backgroundColor: "rgba(100, 117, 88, 0.15)",
+                    border: "1px solid rgba(100, 117, 88, 0.5)",
+                    color: "#798c6a",
+                    fontWeight: 800,
+                    fontSize: "0.95rem",
+                    height: "56px",
+                    width: "56px",
+                    minWidth: "56px",
+                    flexShrink: 0,
+                    borderRadius: "50%",
+                    boxShadow: "0 0 15px rgba(100, 117, 88, 0.1)"
+                  }}>
+                    {progressPercentage.toFixed(1)}%
+                  </div>
+                </div>
+                <div style={{ width: "100%", height: "10px", backgroundColor: "rgba(255, 255, 255, 0.1)", borderRadius: "5px", overflow: "hidden", boxShadow: "inset 0 1px 3px rgba(0,0,0,0.5)" }}>
+                  <div style={{ width: `${progressPercentage}%`, height: "100%", backgroundColor: "#647558", background: "linear-gradient(90deg, #4f5c45 0%, #647558 100%)", transition: "width 0.8s ease-in-out" }}></div>
+                </div>
+                <hr style={{ borderColor: "rgba(255, 255, 255, 0.1)", margin: "1.25rem 0 1rem 0", borderWidth: "1px 0 0 0" }} />
+              </div>
+            )}
+
             <div className="legend-item">
               <div className="legend-color donated"></div>
               <span>{t("map.legend.donated")}</span>

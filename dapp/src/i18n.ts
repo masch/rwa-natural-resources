@@ -25,6 +25,8 @@ const resources = {
           available: "Available for Conservation",
           selected: "Selected",
         },
+        progress_title: "Reforestation Progress",
+        progress_subtitle: "Parcels Secured",
       },
       sidebar: {
         title: "Your Contribution",
@@ -66,6 +68,8 @@ const resources = {
           available: "Disponible para Conservación",
           selected: "Seleccionado",
         },
+        progress_title: "Progreso de Reforestación",
+        progress_subtitle: "Parcelas Aseguradas",
       },
       sidebar: {
         title: "Tu Contribución",

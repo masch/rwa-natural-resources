@@ -136,7 +136,10 @@ sync-env: ## Sync contract ID to website env
 	else \
 		echo 'PUBLIC_BOSCORA_NFT_CONTRACT_ID="'$$(cat .stellar/boscora_nft_id-$(network))'"' >> dapp/.env; \
 	fi
-	@echo "Env synced for dapp"
+	@if grep -q "PUBLIC_BOSCORA_NFT_CONTRACT_ID: " .github/workflows/deploy-gh-pages.yml; then \
+		sed -i 's/PUBLIC_BOSCORA_NFT_CONTRACT_ID: .*/PUBLIC_BOSCORA_NFT_CONTRACT_ID: "'$$(cat .stellar/boscora_nft_id-$(network))'"/' .github/workflows/deploy-gh-pages.yml; \
+	fi
+	@echo "Env synced for dapp and github actions"
 
 # Quick help
 help:

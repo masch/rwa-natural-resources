@@ -25,7 +25,9 @@ function App() {
   useEffect(() => {
     const loadKMLData = async () => {
       try {
-        const response = await fetch(`${import.meta.env.BASE_URL}Reserva%20Bosques%20de%20Agua.kml`);
+        const response = await fetch(
+          `${import.meta.env.BASE_URL}Reserva%20Bosques%20de%20Agua.kml`,
+        );
         if (!response.ok) throw new Error("Network response was not ok");
         const text = await response.text();
         const kmlDoc = new DOMParser().parseFromString(text, "text/xml");
@@ -131,40 +133,39 @@ function App() {
     try {
       setIsLoading(true);
 
-      for (const lotId of selectedLotIds) {
-        const lot = lots.find((l) => l.id === lotId);
-        if (!lot) continue;
-
+      const parcels = selectedLotIds.map((lotId) => {
+        const lot = lots.find((l) => l.id === lotId)!;
         const tokenId = parseInt(lotId.replace("lot-", ""), 10);
-        // Extract basic centroid/coordinates for geo field
-        const geo = {
-          latitude: Math.floor(lot.geometry.coordinates[0][0][1] * 1000000),
-          longitude: Math.floor(lot.geometry.coordinates[0][0][0] * 1000000),
+        return {
+          token_id: tokenId,
+          geo: {
+            latitude: Math.floor(lot.geometry.coordinates[0][0][1] * 1000000),
+            longitude: Math.floor(lot.geometry.coordinates[0][0][0] * 1000000),
+          },
         };
+      });
 
-        // 1. Build & Simulate the transaction
-        const tx = await BoscoraNFT.mint(
-          {
-            to: publicKey,
-            token_id: tokenId,
-            geo: geo,
-          },
-          { publicKey: publicKey },
-        );
+      // 1. Build & Simulate the transaction
+      const tx = await BoscoraNFT.mint(
+        {
+          to: publicKey,
+          parcels: parcels,
+        },
+        { publicKey: publicKey },
+      );
 
-        // 2. Sign and Send using Stellar Wallets Kit
-        const result = await tx.signAndSend({
-          signTransaction: async (xdr: string) => {
-            const res = await StellarWalletsKit.signTransaction(xdr, {
-              networkPassphrase: import.meta.env
-                .PUBLIC_SOROBAN_NETWORK_PASSPHRASE,
-            });
-            return { signedTxXdr: res.signedTxXdr };
-          },
-        });
+      // 2. Sign and Send using Stellar Wallets Kit
+      const result = await tx.signAndSend({
+        signTransaction: async (xdr: string) => {
+          const res = await StellarWalletsKit.signTransaction(xdr, {
+            networkPassphrase: import.meta.env
+              .PUBLIC_SOROBAN_NETWORK_PASSPHRASE,
+          });
+          return { signedTxXdr: res.signedTxXdr };
+        },
+      });
 
-        console.log(`Donated lot ${tokenId}! Transaction id:`, result);
-      }
+      console.log(`Donated ${parcels.length} lots! Transaction id:`, result);
 
       // Process "donation/buy" -> update local state -> show success
       setLots((prev) =>
@@ -285,7 +286,10 @@ function App() {
                         gap: "1rem",
                       }}
                     >
-                      <span className="lot-price">{lot.price} {import.meta.env.PUBLIC_DONATION_ASSET || "USDC"}</span>
+                      <span className="lot-price">
+                        {lot.price}{" "}
+                        {import.meta.env.PUBLIC_DONATION_ASSET || "USDC"}
+                      </span>
                       <button
                         className="remove-btn"
                         onClick={() => handleToggleLot(lot)}
@@ -302,7 +306,9 @@ function App() {
           <div className="sidebar-footer">
             <div className="total-section">
               <span className="total-label">Subtotal</span>
-              <span className="total-amount">{totalAmount} {import.meta.env.PUBLIC_DONATION_ASSET || "USDC"}</span>
+              <span className="total-amount">
+                {totalAmount} {import.meta.env.PUBLIC_DONATION_ASSET || "USDC"}
+              </span>
             </div>
 
             <button

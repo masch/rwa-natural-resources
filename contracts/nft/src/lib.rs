@@ -39,6 +39,13 @@ pub struct GeoCoordinates {
     pub longitude: i32,
 }
 
+#[contracttype]
+#[derive(Clone, Debug, Eq, PartialEq)]
+pub struct ParcelRequest {
+    pub token_id: u32,
+    pub geo: GeoCoordinates,
+}
+
 // --- Oracle Interface ---
 // This allows the NFT contract to call the Oracle contract.
 
@@ -84,7 +91,7 @@ impl BoscoraNFT {
     }
 
     /// Mint a new parcel NFT.
-    pub fn mint(env: Env, to: Address, token_id: u32, geo: GeoCoordinates) {
+    pub fn mint(env: Env, to: Address, parcels: soroban_sdk::Vec<ParcelRequest>) {
         // 1. Require auth from the user minting (to pay for the transaction and the tokens)
         to.require_auth();
 
@@ -94,18 +101,8 @@ impl BoscoraNFT {
             .instance()
             .get(&DataKey::MaxParcels)
             .expect("max parcels not set");
-        if token_id == 0 || token_id > max_parcels {
-            panic!("invalid parcel id: only 1 to max are allowed in the reserve");
-        }
 
-        // 3. Ensure each parcel is minted only once
-        if env.storage().persistent().has(&DataKey::Geo(token_id)) {
-            panic!("duplicate id: parcel already donated/minted");
-        }
-
-        // 4. Charge 50 payment token configured
         let owner = ownable::get_owner(&env).expect("owner not set");
-
         let payment_token_addr: Address = env
             .storage()
             .instance()
@@ -113,19 +110,32 @@ impl BoscoraNFT {
             .expect("payment token not set");
         let token_client = soroban_sdk::token::Client::new(&env, &payment_token_addr);
 
-        let amount_to_charge: i128 = env
+        let price: i128 = env
             .storage()
             .instance()
             .get(&DataKey::Price)
             .expect("price not set");
 
-        // Transfer native token from user to owner (requires auth from user)
+        // 4. Charge payment token
+        let amount_to_charge = price * parcels.len() as i128;
         token_client.transfer(&to, &owner, &amount_to_charge);
 
-        Base::mint(&env, &to, token_id);
-        env.storage()
-            .persistent()
-            .set(&DataKey::Geo(token_id), &geo);
+        for parcel in parcels.iter() {
+            let token_id = parcel.token_id;
+            if token_id == 0 || token_id > max_parcels {
+                panic!("invalid parcel id: only 1 to max are allowed in the reserve");
+            }
+
+            // 3. Ensure each parcel is minted only once
+            if env.storage().persistent().has(&DataKey::Geo(token_id)) {
+                panic!("duplicate id: parcel already donated/minted");
+            }
+
+            Base::mint(&env, &to, token_id);
+            env.storage()
+                .persistent()
+                .set(&DataKey::Geo(token_id), &parcel.geo);
+        }
     }
 
     /// Primary function: Query real-time impact data from the Oracle.
@@ -257,7 +267,16 @@ mod test {
             .mint(&investor, &100_000_0000);
 
         // 3. Mint NFT (Authorized)
-        nft_client.mint(&investor, &token_id, &geo);
+        nft_client.mint(
+            &investor,
+            &soroban_sdk::vec![
+                &env,
+                ParcelRequest {
+                    token_id,
+                    geo: geo.clone()
+                }
+            ],
+        );
         assert_eq!(nft_client.owner_of(&token_id), investor);
         assert_eq!(nft_client.geo_coordinates(&token_id), geo);
 
@@ -292,11 +311,16 @@ mod test {
         // Attacker tries to mint
         nft_client.mint(
             &attacker,
-            &1,
-            &GeoCoordinates {
-                latitude: 0,
-                longitude: 0,
-            },
+            &soroban_sdk::vec![
+                &env,
+                ParcelRequest {
+                    token_id: 1,
+                    geo: GeoCoordinates {
+                        latitude: 0,
+                        longitude: 0,
+                    },
+                }
+            ],
         );
     }
 }

@@ -5,6 +5,8 @@ import { defaultModules } from "@creit-tech/stellar-wallets-kit/modules/utils";
 import "./App.css";
 import MapComponent from "./components/MapComponent";
 import type { LotFeature } from "./components/MapComponent";
+import BoscoraNFT from "./contracts/soroban_boscora_nft";
+
 
 // Init the kit globally
 StellarWalletsKit.init({
@@ -121,20 +123,63 @@ function App() {
     }
   };
 
-  const handleDonate = () => {
-    if (!walletConnected) {
-      alert("Please connect your Stellar wallet first.");
+  const handleDonate = async () => {
+    if (!walletConnected || selectedLotIds.length === 0) {
+      alert("Please connect your Stellar wallet and select at least one lot.");
       return;
     }
 
-    // Process "donation/buy" -> update local state -> show success
-    setLots((prev) =>
-      prev.map((l) =>
-        selectedLotIds.includes(l.id) ? { ...l, status: "donated" } : l,
-      ),
-    );
-    setSelectedLotIds([]);
-    setShowModal(true);
+    try {
+      setIsLoading(true);
+
+      for (const lotId of selectedLotIds) {
+        const lot = lots.find((l) => l.id === lotId);
+        if (!lot) continue;
+
+        const tokenId = parseInt(lotId.replace("lot-", ""), 10);
+        // Extract basic centroid/coordinates for geo field
+        const geo = {
+          latitude: Math.floor(lot.geometry.coordinates[0][0][1] * 1000000),
+          longitude: Math.floor(lot.geometry.coordinates[0][0][0] * 1000000),
+        };
+
+        // 1. Build & Simulate the transaction
+        const tx = await BoscoraNFT.mint(
+          {
+            to: publicKey,
+            token_id: tokenId,
+            geo: geo,
+          },
+          { publicKey: publicKey }
+        );
+
+        // 2. Sign and Send using Stellar Wallets Kit
+        const result = await tx.signAndSend({
+          signTransaction: async (xdr: string) => {
+            const res = await StellarWalletsKit.signTransaction(xdr, {
+              networkPassphrase: import.meta.env.PUBLIC_SOROBAN_NETWORK_PASSPHRASE,
+            });
+            return { signedTxXdr: res.signedTxXdr };
+          },
+        });
+
+        console.log(`Donated lot ${tokenId}! Transaction id:`, result);
+      }
+
+      // Process "donation/buy" -> update local state -> show success
+      setLots((prev) =>
+        prev.map((l) =>
+          selectedLotIds.includes(l.id) ? { ...l, status: "donated" } : l,
+        ),
+      );
+      setSelectedLotIds([]);
+      setShowModal(true);
+    } catch (e) {
+      console.error("Failed to mint NFT:", e);
+      alert("Failed to mint NFT. See console for details.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (

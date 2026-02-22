@@ -1,0 +1,57 @@
+name: Deploy to GitHub Pages
+
+on:
+    push:
+        branches: ["main"]
+    workflow_dispatch:
+
+permissions:
+    contents: read
+    pages: write
+    id-token: write
+
+concurrency:
+    group: "pages"
+    cancel-in-progress: true
+
+jobs:
+    deploy:
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Setup Bun
+              uses: oven-sh/setup-bun@v1
+
+            - name: Install dependencies
+              run: cd dapp && bun install
+
+            - name: Build
+              run: cd dapp && bun run build
+              env:
+                  PUBLIC_DONATION_PRICE: "50"
+                  PUBLIC_DONATION_ASSET: "USDC"
+                  VITE_MAPBOX_TOKEN: ${{ secrets.VITE_MAPBOX_TOKEN }}
+                  PUBLIC_SOROBAN_NETWORK_PASSPHRASE: "Test SDF Network ; September 2015"
+                  PUBLIC_SOROBAN_RPC_URL: "https://soroban-testnet.stellar.org:443"
+                  PUBLIC_HORIZON_URL: "https://horizon-testnet.stellar.org"
+                  PUBLIC_BOSCORA_NFT_CONTRACT_ID: "CDLI5EEBFKQEU3LL3K675DPDHNB5LDC7NDC45X33DQXIAT2OVQRVPGCC"
+                  PUBLIC_SOROBAN_DOMAIN_CONTRACT_ID: "CAUORQ7XOSJOV6NLUK2A7FZSZP5Z55AQPEPMWDEZPQ4DDKSTXBBEDKNF"
+                  PUBLIC_BOSCORA_NFT_OWNER_ID: "GCLUHDCYTU2ZO55HGXAYGWJ74F6F2AX5LJD37HQQCSWCC5WTU75GD4AF"
+                  PUBLIC_DELEGATION_API_URL: "https://ipfs-testnet.boscora.dev"
+
+            - name: Setup Pages
+              uses: actions/configure-pages@v4
+
+            - name: Upload artifact
+              uses: actions/upload-pages-artifact@v3
+              with:
+                  path: "./dapp/dist"
+
+            - name: Deploy to GitHub Pages
+              id: deployment
+              uses: actions/deploy-pages@v4

@@ -19,6 +19,7 @@ StellarWalletsKit.init({
 function App() {
   const [lots, setLots] = useState<LotFeature[]>([]);
   const [selectedLotIds, setSelectedLotIds] = useState<string[]>([]);
+  const [mapCenter, setMapCenter] = useState<[number, number]>([-64.6, -31.4]);
   const [isLoading, setIsLoading] = useState(true);
   const [walletConnected, setWalletConnected] = useState(false);
   const [publicKey, setPublicKey] = useState<string>("");
@@ -50,6 +51,12 @@ function App() {
         // Use dynamic import for turf to avoid potential vite build issues, or just import at top.
         const turf = await import("@turf/turf");
         const polyFc = turf.featureCollection(features as any);
+
+        const centerPt = turf.center(polyFc);
+        if (centerPt.geometry && centerPt.geometry.coordinates) {
+          setMapCenter(centerPt.geometry.coordinates as [number, number]);
+        }
+
         const bbox = turf.bbox(polyFc);
         const totalAreaSqM = turf.area(polyFc);
 
@@ -262,11 +269,14 @@ function App() {
 
       <main className="main-content">
         <div className="map-container">
-          <MapComponent
-            lots={lots}
-            selectedLots={selectedLotIds}
-            onToggleLot={handleToggleLot}
-          />
+          {!isLoading && (
+            <MapComponent
+              lots={lots}
+              selectedLots={selectedLotIds}
+              initialCenter={mapCenter}
+              onToggleLot={handleToggleLot}
+            />
+          )}
 
           <div className="map-legend">
             <div className="legend-item">

@@ -16,12 +16,14 @@ export interface LotFeature {
 interface MapComponentProps {
   lots: LotFeature[];
   selectedLots: string[];
+  initialCenter: [number, number];
   onToggleLot: (lot: LotFeature) => void;
 }
 
 const MapComponent: React.FC<MapComponentProps> = ({
   lots,
   selectedLots,
+  initialCenter,
   onToggleLot,
 }) => {
   const mapContainer = useRef<HTMLDivElement>(null);
@@ -35,8 +37,8 @@ const MapComponent: React.FC<MapComponentProps> = ({
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
       style: "mapbox://styles/mapbox/satellite-streets-v12",
-      center: [-64.6, -31.4], // Sierras de Córdoba, Argentina
-      zoom: 12,
+      center: initialCenter,
+      zoom: 14.5, // slightly zoomed in to compensate for fitBounds removal
       pitch: 45,
       bearing: -17.6,
     });
@@ -221,7 +223,8 @@ const MapComponent: React.FC<MapComponentProps> = ({
               }
             });
             if (!bounds.isEmpty()) {
-              map.current!.fitBounds(bounds, { padding: 40, duration: 1500 });
+              // fitBounds previously overridden the initial static center.
+              // Now we omit it so that initialCenter + pitch are maintained perfectly
               boundsFitted.current = true;
             }
           } catch (e) {

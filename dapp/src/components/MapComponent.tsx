@@ -74,6 +74,8 @@ const MapComponent: React.FC<MapComponentProps> = ({
             0.8,
             ["boolean", ["feature-state", "hover"], false],
             0.6,
+            ["==", ["get", "status"], "donated"],
+            0.8,
             0.4,
           ],
         },
@@ -168,6 +170,8 @@ const MapComponent: React.FC<MapComponentProps> = ({
   }, [onToggleLot]); // only run once (onToggleLot might change but usually stable)
 
   // 2. Sync GeoJSON data and Bounds when KML parses and sets `lots`
+  const boundsFitted = useRef(false);
+
   useEffect(() => {
     if (!map.current) return;
 
@@ -190,34 +194,37 @@ const MapComponent: React.FC<MapComponentProps> = ({
         };
         source.setData(featureCollection);
 
-        // Update bounds
-        try {
-          const bounds = new mapboxgl.LngLatBounds();
-          lots.forEach((lot) => {
-            const geom = lot.geometry as any;
-            if (
-              geom.type === "Polygon" &&
-              geom.coordinates &&
-              geom.coordinates[0]
-            ) {
-              geom.coordinates[0].forEach((coord: [number, number]) => {
-                bounds.extend(coord);
-              });
-            } else if (geom.type === "MultiPolygon" && geom.coordinates) {
-              geom.coordinates.forEach((poly: any) => {
-                if (poly[0]) {
-                  poly[0].forEach((coord: [number, number]) => {
-                    bounds.extend(coord);
-                  });
-                }
-              });
+        // Update bounds only on initial load to prevent map jumping
+        if (!boundsFitted.current) {
+          try {
+            const bounds = new mapboxgl.LngLatBounds();
+            lots.forEach((lot) => {
+              const geom = lot.geometry as any;
+              if (
+                geom.type === "Polygon" &&
+                geom.coordinates &&
+                geom.coordinates[0]
+              ) {
+                geom.coordinates[0].forEach((coord: [number, number]) => {
+                  bounds.extend(coord);
+                });
+              } else if (geom.type === "MultiPolygon" && geom.coordinates) {
+                geom.coordinates.forEach((poly: any) => {
+                  if (poly[0]) {
+                    poly[0].forEach((coord: [number, number]) => {
+                      bounds.extend(coord);
+                    });
+                  }
+                });
+              }
+            });
+            if (!bounds.isEmpty()) {
+              map.current!.fitBounds(bounds, { padding: 40, duration: 1500 });
+              boundsFitted.current = true;
             }
-          });
-          if (!bounds.isEmpty()) {
-            map.current!.fitBounds(bounds, { padding: 40, duration: 1500 });
+          } catch (e) {
+            console.warn("Could not fit bounds", e);
           }
-        } catch (e) {
-          console.warn("Could not fit bounds", e);
         }
       }
     };

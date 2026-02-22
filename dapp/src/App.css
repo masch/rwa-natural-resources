@@ -26,9 +26,7 @@
   margin: 0;
   font-size: 1.5rem;
   font-weight: 700;
-  background: linear-gradient(135deg, #34d399 0%, #3b82f6 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #ffffff;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -190,7 +188,7 @@
 
 .donate-btn {
   width: 100%;
-  background: linear-gradient(135deg, var(--primary) 0%, #059669 100%);
+  background: var(--primary);
   color: white;
   border: none;
   padding: 1rem;
@@ -199,7 +197,7 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: center;
   align-items: center;

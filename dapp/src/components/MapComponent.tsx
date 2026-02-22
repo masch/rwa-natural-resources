@@ -67,7 +67,7 @@ const MapComponent: React.FC<MapComponentProps> = ({
             "match",
             ["get", "status"],
             "donated",
-            "#10b981", // Green for donated (reforested)
+            "#647558", // Green for donated (reforested)
             "rgba(255, 255, 255, 0.1)", // Transparent white for available
           ],
           "fill-opacity": [
@@ -97,7 +97,7 @@ const MapComponent: React.FC<MapComponentProps> = ({
               "match",
               ["get", "status"],
               "donated",
-              "#059669",
+              "#4f5c45",
               "rgba(255, 255, 255, 0.4)",
             ],
           ],
@@ -154,11 +154,11 @@ const MapComponent: React.FC<MapComponentProps> = ({
             onToggleLot(lot);
           } else if (props && props.status === "donated") {
             const html = `
-                            <div style="color: #333; font-family: 'Outfit', sans-serif;">
+                            <div style="color: #333; font-family: 'Montserrat', sans-serif;">
                                 <h4 style="margin: 0 0 5px 0; font-size: 15px;">🌳 ${props.name}</h4>
-                                <p style="margin: 0; font-size: 13px;">${t('popup.partOf')}</p>
-                                <p style="margin: 5px 0 0 0; font-size: 13px; font-weight: bold; color: #10b981;">${t('popup.value')} ${props.price} ${import.meta.env.PUBLIC_DONATION_ASSET || "USDC"}</p>
-                                <p style="margin: 5px 0 0 0; font-size: 11px; color: #666;">${t('popup.protected')}</p>
+                                <p style="margin: 0; font-size: 13px;">${t("popup.partOf")}</p>
+                                <p style="margin: 5px 0 0 0; font-size: 13px; font-weight: bold; color: #647558;">${t("popup.value")} ${props.price} ${import.meta.env.PUBLIC_DONATION_ASSET || "USDC"}</p>
+                                <p style="margin: 5px 0 0 0; font-size: 11px; color: #666;">${t("popup.protected")}</p>
                             </div>
                         `;
             new mapboxgl.Popup({ className: "custom-popup", maxWidth: "300px" })

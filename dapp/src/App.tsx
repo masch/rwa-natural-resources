@@ -130,7 +130,7 @@ function App() {
 
   const handleDonate = async () => {
     if (!walletConnected || selectedLotIds.length === 0) {
-      showAlert(t('sidebar.alert_connect'));
+      showAlert(t("sidebar.alert_connect"));
       return;
     }
 
@@ -181,7 +181,7 @@ function App() {
       setShowModal(true);
     } catch (e) {
       console.error("Failed to mint NFT:", e);
-      showAlert(t('sidebar.alert_fail'));
+      showAlert(t("sidebar.alert_fail"));
     } finally {
       setIsLoading(false);
     }
@@ -192,8 +192,8 @@ function App() {
       {isLoading && (
         <div className="loading-overlay">
           <div className="spinner"></div>
-          <h2>{t('app.loading')}</h2>
-          <p>{t('app.syncing')}</p>
+          <h2>{t("app.loading")}</h2>
+          <p>{t("app.syncing")}</p>
         </div>
       )}
 
@@ -203,21 +203,21 @@ function App() {
         <div className="modal-overlay">
           <div className="modal-content">
             <div className="modal-header">
-              <h3>{t('modal.title')}</h3>
+              <h3>{t("modal.title")}</h3>
               <button className="close-btn" onClick={() => setShowModal(false)}>
                 &times;
               </button>
             </div>
-            <p>{t('modal.p1')}</p>
-            <p style={{ marginTop: "1rem", color: "#10b981", fontWeight: 600 }}>
-              {t('modal.p2')}
+            <p>{t("modal.p1")}</p>
+            <p style={{ marginTop: "1rem", color: "#647558", fontWeight: 600 }}>
+              {t("modal.p2")}
             </p>
             <button
               className="donate-btn"
               style={{ marginTop: "1.5rem" }}
               onClick={() => setShowModal(false)}
             >
-              {t('modal.btn')}
+              {t("modal.btn")}
             </button>
           </div>
         </div>
@@ -225,17 +225,37 @@ function App() {
 
       <header className="header">
         <h1>
-          <span style={{ fontSize: "1.8rem" }}>🌲</span>
-          {t('app.title')}
+          <img
+            src={`${import.meta.env.BASE_URL}logo.png`}
+            alt="Logo"
+            style={{
+              height: "40px",
+              width: "40px",
+              objectFit: "contain",
+              backgroundColor: "rgba(255, 255, 255, 0.95)",
+              borderRadius: "50%",
+              padding: "4px",
+              boxShadow: "0 0 15px rgba(16, 185, 129, 0.2)",
+            }}
+          />
+          {t("app.title")}
         </h1>
         <div style={{ display: "flex", gap: "10px" }}>
-          <button className="connect-wallet-btn" style={{ background: "transparent", color: "white", padding: "8px 12px" }} onClick={toggleLanguage}>
-            {currentLanguage === 'es' ? '🇺🇸 EN' : '🇪🇸 ES'}
+          <button
+            className="connect-wallet-btn"
+            style={{
+              background: "transparent",
+              color: "white",
+              padding: "8px 12px",
+            }}
+            onClick={toggleLanguage}
+          >
+            {currentLanguage === "es" ? "🇺🇸 EN" : "🇪🇸 ES"}
           </button>
           <button className="connect-wallet-btn" onClick={handleConnectWallet}>
             {walletConnected
-              ? `${t('app.connected')} ${publicKey.slice(0, 4)}...${publicKey.slice(-4)}`
-              : `🔗 ${t('app.connect')}`}
+              ? `${t("app.connected")} ${publicKey.slice(0, 4)}...${publicKey.slice(-4)}`
+              : `🔗 ${t("app.connect")}`}
           </button>
         </div>
       </header>
@@ -251,22 +271,22 @@ function App() {
           <div className="map-legend">
             <div className="legend-item">
               <div className="legend-color donated"></div>
-              <span>{t('map.legend.donated')}</span>
+              <span>{t("map.legend.donated")}</span>
             </div>
             <div className="legend-item">
               <div className="legend-color available"></div>
-              <span>{t('map.legend.available')}</span>
+              <span>{t("map.legend.available")}</span>
             </div>
             <div className="legend-item">
               <div className="legend-color selected"></div>
-              <span>{t('map.legend.selected')}</span>
+              <span>{t("map.legend.selected")}</span>
             </div>
           </div>
         </div>
 
         <aside className="sidebar">
           <div className="sidebar-header">
-            <h2>{t('sidebar.title')}</h2>
+            <h2>{t("sidebar.title")}</h2>
           </div>
 
           <div className="sidebar-content">
@@ -274,7 +294,7 @@ function App() {
               <div className="empty-state">
                 <div className="empty-icon">🗺️</div>
                 <p>
-                  {t('sidebar.empty_line1')} <br /> {t('sidebar.empty_line2')}
+                  {t("sidebar.empty_line1")} <br /> {t("sidebar.empty_line2")}
                 </p>
               </div>
             ) : (
@@ -283,7 +303,7 @@ function App() {
                   <div key={lot.id} className="lot-item">
                     <div className="lot-info">
                       <h4>{lot.name}</h4>
-                      <p>{t('sidebar.lot_subtitle')}</p>
+                      <p>{t("sidebar.lot_subtitle")}</p>
                     </div>
                     <div
                       style={{
@@ -311,7 +331,7 @@ function App() {
 
           <div className="sidebar-footer">
             <div className="total-section">
-              <span className="total-label">{t('sidebar.subtotal')}</span>
+              <span className="total-label">{t("sidebar.subtotal")}</span>
               <span className="total-amount">
                 {totalAmount} {import.meta.env.PUBLIC_DONATION_ASSET || "USDC"}
               </span>
@@ -322,7 +342,7 @@ function App() {
               disabled={selectedLotsCards.length === 0}
               onClick={handleDonate}
             >
-              {t('sidebar.donate_btn')}
+              {t("sidebar.donate_btn")}
             </button>
           </div>
         </aside>

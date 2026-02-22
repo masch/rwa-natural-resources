@@ -1,8 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 
 :root {
   font-family:
-    "Outfit",
+    "Montserrat",
     system-ui,
     -apple-system,
     BlinkMacSystemFont,
@@ -16,17 +16,17 @@
 
   color-scheme: dark;
   color: rgba(255, 255, 255, 0.9);
-  background: radial-gradient(circle at top left, #0d211f, #040d0b);
+  background: #000000;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --primary: #10b981;
-  --primary-hover: #34d399;
-  --secondary: #1e3a8a;
-  --bg-glass: rgba(16, 18, 27, 0.6);
+  --primary: #647558;
+  --primary-hover: #798c6a;
+  --secondary: #000000;
+  --bg-glass: rgba(0, 0, 0, 0.8);
   --border-glass: rgba(255, 255, 255, 0.1);
 }
 

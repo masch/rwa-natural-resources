@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useAppTranslation } from '../hooks/useAppTranslation';
 
 interface AlertDialogProps {
     isOpen: boolean;
@@ -8,7 +8,7 @@ interface AlertDialogProps {
 }
 
 const AlertDialog: React.FC<AlertDialogProps> = ({ isOpen, message, onClose }) => {
-    const { t } = useTranslation();
+    const { t } = useAppTranslation();
 
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {

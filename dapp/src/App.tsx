@@ -7,7 +7,7 @@ import MapComponent from "./components/MapComponent";
 import type { LotFeature } from "./components/MapComponent";
 import { useAlertDialog } from "./hooks/useAlertDialog";
 import BoscoraNFT from "./contracts/soroban_boscora_nft";
-import { useTranslation } from "react-i18next";
+import { useAppTranslation } from "./hooks/useAppTranslation";
 
 // Init the kit globally
 StellarWalletsKit.init({
@@ -24,11 +24,7 @@ function App() {
   const [publicKey, setPublicKey] = useState<string>("");
   const [showModal, setShowModal] = useState(false);
   const { showAlert, AlertDialogComponent } = useAlertDialog();
-  const { t, i18n } = useTranslation();
-
-  const toggleLanguage = () => {
-    i18n.changeLanguage(i18n.language.startsWith('es') ? 'en' : 'es');
-  };
+  const { t, currentLanguage, toggleLanguage } = useAppTranslation();
 
   useEffect(() => {
     const loadKMLData = async () => {
@@ -234,7 +230,7 @@ function App() {
         </h1>
         <div style={{ display: "flex", gap: "10px" }}>
           <button className="connect-wallet-btn" style={{ background: "transparent", color: "white", padding: "8px 12px" }} onClick={toggleLanguage}>
-            {i18n.language.startsWith('es') ? '🇺🇸 EN' : '🇪🇸 ES'}
+            {currentLanguage === 'es' ? '🇺🇸 EN' : '🇪🇸 ES'}
           </button>
           <button className="connect-wallet-btn" onClick={handleConnectWallet}>
             {walletConnected

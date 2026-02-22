@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
-import { useTranslation } from "react-i18next";
+import { useAppTranslation } from "../hooks/useAppTranslation";
 
 mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN;
 
@@ -26,7 +26,7 @@ const MapComponent: React.FC<MapComponentProps> = ({
 }) => {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
-  const { t } = useTranslation();
+  const { t } = useAppTranslation();
 
   // 1. Init map only once
   useEffect(() => {

@@ -79,7 +79,7 @@ function App() {
           return {
             id: `lot-${idx}`,
             name: `Parcela BDA-${(idx + 1).toString().padStart(3, "0")}`,
-            price: 50 + Math.floor(Math.random() * 50),
+            price: Number(import.meta.env.PUBLIC_DONATION_PRICE) || 50,
             status: statuses[idx] as "donated" | "available",
             geometry: f.geometry,
           };
@@ -285,7 +285,7 @@ function App() {
                         gap: "1rem",
                       }}
                     >
-                      <span className="lot-price">{lot.price} XLM</span>
+                      <span className="lot-price">{lot.price} {import.meta.env.PUBLIC_DONATION_ASSET || "USDC"}</span>
                       <button
                         className="remove-btn"
                         onClick={() => handleToggleLot(lot)}
@@ -302,7 +302,7 @@ function App() {
           <div className="sidebar-footer">
             <div className="total-section">
               <span className="total-label">Subtotal</span>
-              <span className="total-amount">{totalAmount} XLM</span>
+              <span className="total-amount">{totalAmount} {import.meta.env.PUBLIC_DONATION_ASSET || "USDC"}</span>
             </div>
 
             <button

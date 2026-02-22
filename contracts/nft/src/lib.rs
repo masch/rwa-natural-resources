@@ -29,6 +29,7 @@ pub enum DataKey {
     Geo(u32),       // token_id -> GeoCoordinates
     MaxParcels,     // Maximum number of parcels
     PaymentToken,   // Address of the USDC/Payment token
+    Price,          // Price per parcel in payment token
 }
 
 #[contracttype]
@@ -59,6 +60,7 @@ impl BoscoraNFT {
         oracle: Address,
         max_parcels: u32,
         payment_token: Address,
+        price: i128,
     ) {
         ownable::set_owner(&env, &admin);
         env.storage()
@@ -70,6 +72,7 @@ impl BoscoraNFT {
         env.storage()
             .instance()
             .set(&DataKey::PaymentToken, &payment_token);
+        env.storage().instance().set(&DataKey::Price, &price);
 
         // Initialize NFT collection metadata (SEP-50)
         Base::set_metadata(
@@ -110,7 +113,11 @@ impl BoscoraNFT {
             .expect("payment token not set");
         let token_client = soroban_sdk::token::Client::new(&env, &payment_token_addr);
 
-        let amount_to_charge: i128 = 50_000_0000; // 50 Tokens (assuming 7 decimals)
+        let amount_to_charge: i128 = env
+            .storage()
+            .instance()
+            .get(&DataKey::Price)
+            .expect("price not set");
 
         // Transfer native token from user to owner (requires auth from user)
         token_client.transfer(&to, &owner, &amount_to_charge);
@@ -234,6 +241,7 @@ mod test {
                 oracle_id.clone(),
                 500u32,
                 payment_token.clone(),
+                50_000_0000_i128,
             ),
         );
         let nft_client = BoscoraNFTClient::new(&env, &nft_id);
@@ -275,7 +283,10 @@ mod test {
             .register_stellar_asset_contract_v2(admin.clone())
             .address();
 
-        let nft_id = env.register(BoscoraNFT, (admin, oracle, 500u32, payment_token));
+        let nft_id = env.register(
+            BoscoraNFT,
+            (admin, oracle, 500u32, payment_token, 50_000_0000_i128),
+        );
         let nft_client = BoscoraNFTClient::new(&env, &nft_id);
 
         // Attacker tries to mint

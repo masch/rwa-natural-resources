@@ -110,6 +110,7 @@ contract_deploy:  ## Deploy Soroban contract to testnet
   		--oracle $$(cat .stellar/boscora_oracle_id-$(network)) \
   		--max_parcels 500 \
 		--payment_token $(payment_token) \
+		--price 500000000 \
   		> .stellar/boscora_nft_id-$(network)
 	@echo "NFT deployed at: $$(cat .stellar/boscora_nft_id-$(network))"
 

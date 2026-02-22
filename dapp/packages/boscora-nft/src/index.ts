@@ -32,7 +32,8 @@ if (typeof window !== "undefined") {
 
 export type DataKey =
   | { tag: "OracleContract"; values: void }
-  | { tag: "Geo"; values: readonly [u32] };
+  | { tag: "Geo"; values: readonly [u32] }
+  | { tag: "MaxParcels"; values: void };
 
 export enum HealthStatus {
   Germinating = 0,
@@ -1175,7 +1176,11 @@ export interface Client {
 export class Client extends ContractClient {
   static async deploy<T = Client>(
     /** Constructor/Initialization Args for the contract's `__constructor` method */
-    { admin, oracle }: { admin: string; oracle: string },
+    {
+      admin,
+      oracle,
+      max_parcels,
+    }: { admin: string; oracle: string; max_parcels: u32 },
     /** Options for initializing a Client as well as for calling a method, with extras specific to deploying. */
     options: MethodOptions &
       Omit<ContractClientOptions, "contractId"> & {
@@ -1187,19 +1192,19 @@ export class Client extends ContractClient {
         format?: "hex" | "base64";
       },
   ): Promise<AssembledTransaction<T>> {
-    return ContractClient.deploy({ admin, oracle }, options);
+    return ContractClient.deploy({ admin, oracle, max_parcels }, options);
   }
   constructor(public readonly options: ContractClientOptions) {
     super(
       new ContractSpec([
-        "AAAAAgAAAAAAAAAAAAAAB0RhdGFLZXkAAAAAAgAAAAAAAAAAAAAADk9yYWNsZUNvbnRyYWN0AAAAAAABAAAAAAAAAANHZW8AAAAAAQAAAAQ=",
+        "AAAAAgAAAAAAAAAAAAAAB0RhdGFLZXkAAAAAAwAAAAAAAAAAAAAADk9yYWNsZUNvbnRyYWN0AAAAAAABAAAAAAAAAANHZW8AAAAAAQAAAAQAAAAAAAAAAAAAAApNYXhQYXJjZWxzAAA=",
         "AAAAAAAAABZNaW50IGEgbmV3IHBhcmNlbCBORlQuAAAAAAAEbWludAAAAAMAAAAAAAAAAnRvAAAAAAATAAAAAAAAAAh0b2tlbl9pZAAAAAQAAAAAAAAAA2dlbwAAAAfQAAAADkdlb0Nvb3JkaW5hdGVzAAAAAAAA",
         "AAAAAAAAACpFeHBsaWNpdGx5IGV4cG9zZSBvd25lcl9vZiBmb3IgdGhlIGNsaWVudC4AAAAAAAhvd25lcl9vZgAAAAEAAAAAAAAACHRva2VuX2lkAAAABAAAAAEAAAAT",
         "AAAAAwAAAAAAAAAAAAAADEhlYWx0aFN0YXR1cwAAAAQAAAAAAAAAC0dlcm1pbmF0aW5nAAAAAAAAAAAAAAAACFNwcm91dGVkAAAAAQAAAAAAAAASUmVhZHlGb3JUcmFuc3BsYW50AAAAAAACAAAAAAAAAAdQbGFudGVkAAAAAAM=",
         "AAAAAAAAAAAAAAAJdG9rZW5fdXJpAAAAAAAAAQAAAAAAAAAIdG9rZW5faWQAAAAEAAAAAQAAABA=",
         "AAAAAQAAAAAAAAAAAAAADUltcGFjdE1ldHJpY3MAAAAAAAADAAAAAAAAAAdiaW9tYXNzAAAAAAsAAAAAAAAADGNvMl9jYXB0dXJlZAAAAAsAAAAAAAAABmhlYWx0aAAAAAAH0AAAAAxIZWFsdGhTdGF0dXM=",
         "AAAAAQAAAAAAAAAAAAAADkdlb0Nvb3JkaW5hdGVzAAAAAAACAAAAAAAAAAhsYXRpdHVkZQAAAAUAAAAAAAAACWxvbmdpdHVkZQAAAAAAAAU=",
-        "AAAAAAAAAAAAAAANX19jb25zdHJ1Y3RvcgAAAAAAAAIAAAAAAAAABWFkbWluAAAAAAAAEwAAAAAAAAAGb3JhY2xlAAAAAAATAAAAAA==",
+        "AAAAAAAAAAAAAAANX19jb25zdHJ1Y3RvcgAAAAAAAAMAAAAAAAAABWFkbWluAAAAAAAAEwAAAAAAAAAGb3JhY2xlAAAAAAATAAAAAAAAAAttYXhfcGFyY2VscwAAAAAEAAAAAA==",
         "AAAAAAAAAB5HZXR0ZXIgZm9yIHBhcmNlbCBjb29yZGluYXRlcy4AAAAAAA9nZW9fY29vcmRpbmF0ZXMAAAAAAQAAAAAAAAAIdG9rZW5faWQAAAAEAAAAAQAAB9AAAAAOR2VvQ29vcmRpbmF0ZXMAAA==",
         "AAAAAAAAAD5QcmltYXJ5IGZ1bmN0aW9uOiBRdWVyeSByZWFsLXRpbWUgaW1wYWN0IGRhdGEgZnJvbSB0aGUgT3JhY2xlLgAAAAAAD2dldF9saXZlX2ltcGFjdAAAAAABAAAAAAAAAAh0b2tlbl9pZAAAAAQAAAABAAAH0AAAAA1JbXBhY3RNZXRyaWNzAAAA",
         "AAAABAAAAAAAAAAAAAAAEVJvbGVUcmFuc2ZlckVycm9yAAAAAAAAAwAAAAAAAAARTm9QZW5kaW5nVHJhbnNmZXIAAAAAAAiYAAAAAAAAABZJbnZhbGlkTGl2ZVVudGlsTGVkZ2VyAAAAAAiZAAAAAAAAABVJbnZhbGlkUGVuZGluZ0FjY291bnQAAAAAAAia",

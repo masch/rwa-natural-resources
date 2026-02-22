@@ -2,7 +2,6 @@
 
 use soroban_sdk::{contract, contractclient, contractimpl, contracttype, Address, Env, String};
 use stellar_access::ownable::{self, Ownable};
-use stellar_macros::only_owner;
 use stellar_tokens::non_fungible::{Base, NonFungibleToken};
 
 // --- Data Structures ---
@@ -28,6 +27,7 @@ pub struct ImpactMetrics {
 pub enum DataKey {
     OracleContract, // Address of the Oracle contract
     Geo(u32),       // token_id -> GeoCoordinates
+    MaxParcels,     // Maximum number of parcels
 }
 
 #[contracttype]
@@ -52,11 +52,14 @@ pub struct BoscoraNFT;
 
 #[contractimpl]
 impl BoscoraNFT {
-    pub fn __constructor(env: Env, admin: Address, oracle: Address) {
+    pub fn __constructor(env: Env, admin: Address, oracle: Address, max_parcels: u32) {
         ownable::set_owner(&env, &admin);
         env.storage()
             .instance()
             .set(&DataKey::OracleContract, &oracle);
+        env.storage()
+            .instance()
+            .set(&DataKey::MaxParcels, &max_parcels);
 
         // Initialize NFT collection metadata (SEP-50)
         Base::set_metadata(
@@ -68,11 +71,39 @@ impl BoscoraNFT {
     }
 
     /// Mint a new parcel NFT.
-    #[only_owner]
     pub fn mint(env: Env, to: Address, token_id: u32, geo: GeoCoordinates) {
-        if env.storage().persistent().has(&DataKey::Geo(token_id)) {
-            panic!("duplicate id");
+        // 1. Require auth from the user minting (to pay for the transaction and the tokens)
+        to.require_auth();
+
+        // 2. Limit the max amount of parcels dynamically
+        let max_parcels: u32 = env
+            .storage()
+            .instance()
+            .get(&DataKey::MaxParcels)
+            .expect("max parcels not set");
+        if token_id == 0 || token_id > max_parcels {
+            panic!("invalid parcel id: only 1 to max are allowed in the reserve");
         }
+
+        // 3. Ensure each parcel is minted only once
+        if env.storage().persistent().has(&DataKey::Geo(token_id)) {
+            panic!("duplicate id: parcel already donated/minted");
+        }
+
+        // 4. Charge 50 XLM and send to the owner
+        let owner = ownable::get_owner(&env).expect("owner not set");
+
+        // Native token (XLM) cross-contract address for Testnet
+        let native_token: Address = Address::from_string(&String::from_str(
+            &env,
+            "CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47ZG2FB2RMQQVU2HHGCYSC",
+        ));
+        let token_client = soroban_sdk::token::Client::new(&env, &native_token);
+
+        let amount_to_charge: i128 = 50_000_0000; // 50 XLM (7 decimals)
+
+        // Transfer native token from user to owner (requires auth from user)
+        token_client.transfer(&to, &owner, &amount_to_charge);
 
         Base::mint(&env, &to, token_id);
         env.storage()
@@ -181,7 +212,7 @@ mod test {
         let oracle_client = MockOracleClient::new(&env, &oracle_id);
 
         // 2. Deploy NFT
-        let nft_id = env.register(BoscoraNFT, (admin.clone(), oracle_id.clone()));
+        let nft_id = env.register(BoscoraNFT, (admin.clone(), oracle_id.clone(), 500u32));
         let nft_client = BoscoraNFTClient::new(&env, &nft_id);
 
         let token_id = 101;
@@ -213,7 +244,7 @@ mod test {
         let attacker = Address::generate(&env);
         let oracle = Address::generate(&env);
 
-        let nft_id = env.register(BoscoraNFT, (admin, oracle));
+        let nft_id = env.register(BoscoraNFT, (admin, oracle, 500u32));
         let nft_client = BoscoraNFTClient::new(&env, &nft_id);
 
         // Attacker tries to mint

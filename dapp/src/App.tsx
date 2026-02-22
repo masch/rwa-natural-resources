@@ -7,7 +7,6 @@ import MapComponent from "./components/MapComponent";
 import type { LotFeature } from "./components/MapComponent";
 import BoscoraNFT from "./contracts/soroban_boscora_nft";
 
-
 // Init the kit globally
 StellarWalletsKit.init({
   network: "TESTNET" as any,
@@ -150,14 +149,15 @@ function App() {
             token_id: tokenId,
             geo: geo,
           },
-          { publicKey: publicKey }
+          { publicKey: publicKey },
         );
 
         // 2. Sign and Send using Stellar Wallets Kit
         const result = await tx.signAndSend({
           signTransaction: async (xdr: string) => {
             const res = await StellarWalletsKit.signTransaction(xdr, {
-              networkPassphrase: import.meta.env.PUBLIC_SOROBAN_NETWORK_PASSPHRASE,
+              networkPassphrase: import.meta.env
+                .PUBLIC_SOROBAN_NETWORK_PASSPHRASE,
             });
             return { signedTxXdr: res.signedTxXdr };
           },

@@ -1,6 +1,6 @@
 #![no_std]
 use soroban_sdk::{contract, contractclient, contractimpl, panic_with_error, Address, Env, String};
-use stellar_access::ownable::{self, Ownable};
+use stellar_access::ownable::{self};
 use stellar_tokens::non_fungible::{Base, NonFungibleToken};
 
 mod errors;
@@ -147,27 +147,13 @@ impl BoscoraNFT {
                 panic_with_error!(&env, &crate::errors::ContractErrors::NoGeoDataFound)
             })
     }
-
-    /// Explicitly expose owner_of for the client.
-    pub fn owner_of(env: Env, token_id: u32) -> Address {
-        Base::owner_of(&env, token_id)
-    }
 }
 
 // Implement standard SEP-50 Token interface
-#[contractimpl]
+#[contractimpl(contracttrait)]
 impl NonFungibleToken for BoscoraNFT {
     type ContractType = Base;
-
-    fn token_uri(env: &Env, _token_id: u32) -> String {
-        // Pointing to a static JSON payload inside the contract: Data URI Base64
-        // {"name":"Boscora - Impacta","description":"Parcela de Restauracion en Bosques de Agua","image":"https://bosquesdeagua.ar/logo.png"}
-        String::from_str(env, "data:application/json;base64,eyJuYW1lIjoiQm9zY29yYSAtIEltcGFjdGEiLCJkZXNjcmlwdGlvbiI6IlBhcmNlbGEgZGUgUmVzdGF1cmFjaW9uIGVuIEJvc3F1ZXMgZGUgQWd1YSIsImltYWdlIjoiaHR0cHM6Ly9ib3NxdWVzZGVhZ3VhLmFyL2xvZ28ucG5nIn0=")
-    }
 }
-
-#[contractimpl]
-impl Ownable for BoscoraNFT {}
 
 // --- Tests ---
 

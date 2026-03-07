@@ -1,4 +1,4 @@
-use soroban_sdk::contracttype;
+use soroban_sdk::{contractevent, contracttype};
 
 #[contracttype]
 #[derive(Clone, Debug, Eq, PartialEq)]
@@ -20,4 +20,13 @@ pub struct ImpactMetrics {
 #[contracttype]
 pub enum DataKey {
     OracleData(u32), // asset_id -> ImpactMetrics
+}
+
+#[contractevent]
+#[derive(Clone, Debug, Eq, PartialEq)]
+pub struct ImpactMetricsUpdatedEvent {
+    pub asset_id: u32,
+    pub biomass: i128,
+    pub co2_captured: i128,
+    pub health: HealthStatus,
 }

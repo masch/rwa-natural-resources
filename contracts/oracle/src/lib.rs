@@ -4,6 +4,7 @@ use soroban_sdk::{contract, contractimpl, Address, Env};
 use stellar_access::ownable::{self, Ownable};
 use stellar_macros::only_owner;
 
+mod events;
 #[cfg(test)]
 mod tests;
 
@@ -48,6 +49,14 @@ impl BoscoraOracle {
         env.storage()
             .persistent()
             .set(&DataKey::OracleData(asset_id), &metrics);
+
+        events::ImpactMetricsUpdated {
+            asset_id,
+            biomass: price,
+            co2_captured: 0,
+            health: HealthStatus::Germinating,
+        }
+        .publish(&env);
     }
 
     /// Extended function to update all impact metrics.
@@ -65,12 +74,20 @@ impl BoscoraOracle {
         let metrics = ImpactMetrics {
             biomass,
             co2_captured: co2,
-            health: status,
+            health: status.clone(),
         };
 
         env.storage()
             .persistent()
             .set(&DataKey::OracleData(asset_id), &metrics);
+
+        events::ImpactMetricsUpdated {
+            asset_id,
+            biomass,
+            co2_captured: co2,
+            health: status,
+        }
+        .publish(&env);
     }
 
     /// Get all metrics for a given asset.

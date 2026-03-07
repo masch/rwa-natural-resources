@@ -1,7 +1,8 @@
-use super::*;
 use soroban_sdk::testutils::Address as _;
-use soroban_sdk::Env;
-use stellar_access::ownable::Ownable;
+use soroban_sdk::{contract, contractimpl, Address, Env};
+use stellar_access::ownable::{self, Ownable};
+
+use crate::types;
 
 #[contract]
 pub struct MockOracle;
@@ -54,7 +55,7 @@ fn test_complete_boscora_flow() {
 
     // 2. Deploy NFT
     let nft_id = env.register(
-        BoscoraNFT,
+        crate::BoscoraNFT,
         (
             admin.clone(),
             oracle_id.clone(),
@@ -63,7 +64,7 @@ fn test_complete_boscora_flow() {
             50_000_0000_i128,
         ),
     );
-    let nft_client = BoscoraNFTClient::new(&env, &nft_id);
+    let nft_client = crate::BoscoraNFTClient::new(&env, &nft_id);
 
     let token_id = 101;
     let geo = types::GeoCoordinates {
@@ -112,10 +113,10 @@ fn test_unauthorized_mint() {
         .address();
 
     let nft_id = env.register(
-        BoscoraNFT,
+        crate::BoscoraNFT,
         (admin, oracle, 500u32, payment_token, 50_000_0000_i128),
     );
-    let nft_client = BoscoraNFTClient::new(&env, &nft_id);
+    let nft_client = crate::BoscoraNFTClient::new(&env, &nft_id);
 
     // Attacker tries to mint
     nft_client.mint(

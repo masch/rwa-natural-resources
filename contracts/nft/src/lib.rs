@@ -5,6 +5,8 @@ use stellar_tokens::non_fungible::{Base, NonFungibleToken};
 
 mod errors;
 mod events;
+#[cfg(test)]
+mod tests;
 mod types;
 
 // --- Oracle Interface ---

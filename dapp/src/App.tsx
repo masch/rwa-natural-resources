@@ -278,9 +278,21 @@ function App() {
 
       setSelectedLotIds([]);
       setShowModal(true);
-    } catch (e) {
+    } catch (e: any) {
       console.error("Failed to mint NFT:", e);
-      showAlert(t("sidebar.alert_fail"));
+      const errorMessage = e?.message || String(e);
+      if (
+        errorMessage.includes("Account not found") ||
+        errorMessage.includes("insufficient balance") ||
+        errorMessage.toLowerCase().includes("balance is not sufficient") ||
+        errorMessage.toLowerCase().includes("no trustline") ||
+        errorMessage.includes("Error(Contract, #13)") ||
+        errorMessage.includes("HostError: Error(Contract, #13)")
+      ) {
+        showAlert(t("sidebar.alert_unfunded"));
+      } else {
+        showAlert(t("sidebar.alert_fail"));
+      }
     } finally {
       setIsLoading(false);
     }

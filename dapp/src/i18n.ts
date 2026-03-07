@@ -48,6 +48,7 @@ const resources = {
         alert_connect:
           "Please connect your Stellar wallet and select at least one lot.",
         alert_fail: "Failed to mint NFT. See console for details.",
+        alert_unfunded: "Insufficient funds. Please fund your testnet account with Friendbot or make sure you have enough USDC.",
       },
       popup: {
         partOf: "This parcel is part of the Natural Reserve.",
@@ -103,6 +104,8 @@ const resources = {
           "Por favor conecta tu wallet Stellar y selecciona al menos un lote.",
         alert_fail:
           "Error al acuñar el NFT. Revisa la consola para más detalles.",
+        alert_unfunded:
+          "Fondos insuficientes. Por favor, fondea tu cuenta en la testnet con Friendbot o asegúrate de tener suficientes USDC.",
       },
       popup: {
         partOf: "Esta parcela es parte de la Reserva Natural.",

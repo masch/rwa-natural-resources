@@ -1,4 +1,4 @@
-<h1 align="center">⛰️<a href="https://masch.github.io/bda-rwa-natural-resources">BDA RWA Natural Resources</a>🌳 </h1>
+<h1 align="center">🌱 <a href="https://masch.github.io/bda-rwa-natural-resources">BDA RWA Natural Resources</a> 💧</h1>
 
 
 <div align="center">
@@ -119,6 +119,15 @@ impacta/
     │   └── i18n.ts          # Multi-language configuration
     └── package.json
 ```
+
+---
+
+## 🌐 Bosques de Agua Ecosystem
+
+This smart contract and DApp repository operates as part of a larger interoperable ecosystem for direct IoT-to-Blockchain integration. You can explore the hardware and control layers in their respective repositories:
+
+*   **[App Control Firmware (`bda-app-control`)](https://github.com/masch/bda-app-control):** A Go-based web application orchestrating the active monitoring and remote control of environmental appliances (incubators/ovens) with a PostgreSQL database layer.
+*   **[Seed Incubators IoT (`bda-seed-incubators`)](https://github.com/masch/bda-seed-incubators):** ESP32 microcontroller firmware using C++ and the Arduino framework to automate seed incubators with PID temperature control loops and OTA Firebase updates.
 
 ---
 

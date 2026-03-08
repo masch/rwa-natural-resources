@@ -83,13 +83,34 @@ flowchart TD
 ## 🛠 Project Structure
 
 ```text
-contracts/
-├── oracle/          # SEP-40 Oracle Implementation
-│   ├── src/lib.rs   # Core logic for impact metrics & price feeds
-│   └── Cargo.toml
-└── nft/             # SEP-50 NFT Implementation
-    ├── src/lib.rs   # Cross-contract logic & ownership management
-    └── Cargo.toml
+impacta/
+├── contracts/               # Stellar Soroban Smart Contracts
+│   ├── oracle/              # SEP-40 Oracle Implementation
+│   │   ├── src/           
+│   │   │   ├── lib.rs       # Core logic for impact metrics & price feeds
+│   │   │   ├── types.rs     # Data structures (HealthStatus, ImpactMetrics)
+│   │   │   ├── errors.rs    # Custom contract error handling
+│   │   │   ├── events.rs    # Emitted contract events
+│   │   │   └── tests/       # Oracle Unit Tests
+│   │   │       └── tests.rs # Coverage for impact metrics updates
+│   │   └── Cargo.toml
+│   └── nft/                 # SEP-50 NFT Implementation
+│       ├── src/
+│       │   ├── lib.rs       # SEP-50 standard & Fractionalized geo-minting
+│       │   ├── types.rs     # Data structures (Token Metadata)
+│       │   ├── errors.rs    # Custom NFT error states
+│       │   ├── events.rs    # Mint and burn events
+│       │   └── tests/       # NFT Unit Tests
+│       │       └── tests.rs # Validations & Cross-contract testing
+│       └── Cargo.toml
+└── dapp/                    # React Frontend
+    ├── src/
+    │   ├── components/      # Map and UI widgets
+    │   ├── contracts/       # Generated TS bindings for Soroban
+    │   ├── hooks/           # Wallets and Translation hooks
+    │   ├── App.tsx          # Main interactive interface 
+    │   └── i18n.ts          # Multi-language configuration
+    └── package.json
 ```
 
 ---

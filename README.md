@@ -26,6 +26,59 @@ The system is designed with a **Modular Oracle-NFT Architecture** to handle dyna
 
 ---
 
+
+```mermaid
+flowchart TD
+    %% Main Nodes
+    UI["🖥️ UI Platform<br/>(React DApp)"]
+    Backend["⚙️ Backend / IoT<br/>(Node.js / RPi)"]
+    DB[("🗄️ Supabase<br/>(PostgreSQL)")]
+    IPNS{{"🌐 IPNS<br/>(Metadata)"}}
+    Wallet["👛 Wallet<br/>(Freighter)"]
+
+    %% Integration Kits (Off-chain)
+    WalletsKit("🛠️ stellar-wallets-kit")
+    StellarSDK("🛠️ stellar-sdk")
+
+    %% Stellar Blockchain Environment
+    subgraph StellarNetwork ["🔗 STELLAR BLOCKCHAIN 🔗"]
+        direction TB
+        NFT["📜 NFT Smart Contract<br/>(SEP-50)"]
+        Oracle["⚖️ Oracle Smart Contract<br/>(SEP-40)"]
+        Multisig["🏦 Multisig Wallet<br/>(Donation Treasury)"]
+        
+        %% Cross-contract Interactions within Stellar
+        NFT -- "Queries metrics (get_live_impact)" --> Oracle
+        NFT -- "Sends collected funds" --> Multisig
+    end
+
+    %% Frontend and Wallet Relations
+    UI -- "Requests connection & signature" --> Wallet
+    UI -- "Uses for transaction building" --> WalletsKit
+    WalletsKit -- "Submits transaction (mint)" --> NFT
+    UI -- "Queries data / Metadata" --> Backend
+
+    %% Backend Relations
+    Backend -- "Read / Write" --> DB
+    Backend -- "Generates and links Metadata" --> IPNS
+    
+    %% Backend -> Oracle Relation
+    Backend -. "Injects authorized signatures" .-> StellarSDK
+    StellarSDK -. "Updates metrics (biomass, CO2)" .-> Oracle
+
+    %% Node Styles
+    style UI fill:#f4f4f4,stroke:#333,stroke-width:2px,color:#000
+    style Backend fill:#f4f4f4,stroke:#333,stroke-width:2px,color:#000
+    style DB fill:#e2e8f0,stroke:#64748b,stroke-width:2px,color:#000
+    style IPNS fill:#e2e8f0,stroke:#64748b,stroke-width:2px,color:#000
+    style Wallet fill:#fff,stroke:#10b981,stroke-width:2px,color:#000
+    
+    style StellarNetwork fill:#ecfdf5,stroke:#059669,stroke-width:3px,stroke-dasharray: 5 5,color:#000
+    style NFT fill:#a7f3d0,stroke:#047857,stroke-width:2px,color:#000
+    style Oracle fill:#a7f3d0,stroke:#047857,stroke-width:2px,color:#000
+    style Multisig fill:#fde68a,stroke:#d97706,stroke-width:2px,color:#000
+```
+
 ## 🛠 Project Structure
 
 ```text

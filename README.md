@@ -41,7 +41,7 @@ flowchart TD
     StellarSDK("🛠️ stellar-sdk")
 
     %% Stellar Blockchain Environment
-    subgraph StellarNetwork ["🔗 STELLAR BLOCKCHAIN 🔗"]
+    subgraph StellarNetwork ["🔗 STELLAR 🔗"]
         direction TB
         NFT["📜 NFT Smart Contract<br/>(SEP-50)"]
         Oracle["⚖️ Oracle Smart Contract<br/>(SEP-40)"]

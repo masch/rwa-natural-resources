@@ -1,4 +1,4 @@
-<h1 align="center">🌱 <a href="https://masch.github.io/bda-rwa-natural-resources">BDA RWA Natural Resources</a> 💧</h1>
+<h1 align="center">⛰️🌱🌳<a href="https://masch.github.io/bda-rwa-natural-resources">BDA RWA Natural Resources</a>🌳💧⛰️</h1>
 
 
 <div align="center">
@@ -90,7 +90,7 @@ flowchart TD
 ## 🛠 Project Structure
 
 ```text
-impacta/
+/
 ├── contracts/               # Stellar Soroban Smart Contracts
 │   ├── oracle/              # SEP-40 Oracle Implementation
 │   │   ├── src/           

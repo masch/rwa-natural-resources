@@ -1,33 +1,34 @@
 # 🌳 **Website** ⛰️: [BDA RWA Natural Resources](https://masch.github.io/bda-rwa-natural-resources)
 
-# Boscora: Reforestation & Dynamic Impact Ecosystem
+# Bosques de Agua: Reforestation & Dynamic Impact Ecosystem
 
-Boscora is a decentralized ecosystem built on **Stellar Soroban** to tokenize and monitor reforestation projects. By bridging real-world assets (RWA) with on-chain transparency, Boscora allows investors to own specific parcels of land while receiving real-time ecological data.
+Bosques de Agua is a decentralized ecosystem built on **Stellar Soroban** to tokenize and monitor reforestation projects. By bridging real-world assets (RWA) with on-chain transparency, Bosques de Agua allows investors to own specific parcels of land while receiving real-time ecological data.
 
 ## 🏗 Architecture Overview
 
 The system is designed with a **Modular Oracle-NFT Architecture** to handle dynamic environmental data efficiently:
 
-1.  **Boscora Oracle (SEP-40)**: Acting as the single source of truth for environmental metrics. It receives data from IoT sensors (e.g., Raspberry Pi) and stores dynamic values like biomass, CO2 capture, and plant health.
-2.  **Boscora NFT (SEP-50)**: Represents ownership of a specific reforestation parcel. Instead of relying on static metadata (SEP-11), it performs **Cross-Contract Calls** to the Oracle to provide live impact data.
+1.  **Bosques de Agua Oracle (SEP-40)**: Acting as the single source of truth for environmental metrics. It receives data from IoT sensors (e.g., Raspberry Pi) and stores dynamic values like biomass, CO2 capture, and plant health.
+2.  **Bosques de Agua NFT (SEP-50)**: Represents ownership of a specific reforestation parcel. Instead of relying on static metadata (SEP-11), it performs **Cross-Contract Calls** to the Oracle to provide live impact data.
 
-### 🔄 Data Flow
-`[IoT Sensors/RPi]` -> `[JS/Node Signer]` -> `[Oracle (SEP-40)]` <- `[NFT (SEP-50)]` <- `[Investors/Users]`
 
----
+
 
 ## 🌟 Key Features
+-   **Interactive Map Interface**: Visual frontend tracking parcels, dynamically loading geometries to allow direct geographical selection of real-world land.
+-   **Dynamic Impact Tracking (Oracle)**: Real-time monitoring of biomass (grams), CO2 captured (milligrams), and plant health status via IoT endpoints.
+-   **Cross-Contract Communication**: The SEP-50 NFT contract performs live cross-contract calls to the SEP-40 Oracle to fetch live metrics directly on-chain.
+-   **Seamless Wallet Integration**: Users donate USDC securely to fractionalized parcels acting as a minting trigger, powered by `stellar-wallets-kit` and Freighter.
+-   **Multisig Donation Treasury**: Inherent support for multisig collective wallets directly in the architecture to receive, secure, and distribute all incoming donations transparently.
+-   **Multilingual Support & Leaderboards**: Fully internationalized (i18n) platform with English/Spanish switching and a global Top Donators chart.
+-   **IoT-Native Security**: Restricted write access via `stellar-access` ensures only authorized sensor nodes can update the environmental Oracle metrics.
 
--   **Dynamic Impact Tracking**: Real-time monitoring of biomass (grams), CO2 captured (milligrams), and plant health status.
--   **SEP-40 Asset Oracle Interface**: Standardized price/value feed compatibility where biomass maps to the "price" for secondary market integrations.
--   **SEP-50 Ownership**: Standardized Non-Fungible Token interface for seamless wallet and marketplace support.
--   **IoT-Native Security**: Restricted write access via `stellar-access` ensures only authorized sensor nodes can update ecological metrics.
--   **Low Ledger Footprint**: Optimized storage using numerical types (`i128`, `u32`) instead of heavy JSON/String objects.
 
----
-
-
+## 🗺️ Architecture Diagram
 ```mermaid
+---
+title: Bosques de Agua - Architecture Diagram
+---
 flowchart TD
     %% Main Nodes
     UI["🖥️ UI Platform<br/>(React DApp)"]
@@ -106,7 +107,7 @@ The project uses a root-level workspace for simplified management:
 
 ```bash
 # Clone the repository
-git clone https://github.com/boscora/impacta.git
+git clone https://github.com/Bosques de Agua/impacta.git
 cd impacta/contracts
 
 # Run comprehensive integration tests

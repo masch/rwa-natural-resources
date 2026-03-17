@@ -238,7 +238,8 @@ const MapComponent: React.FC<MapComponentProps> = ({
               }
             });
             if (!bounds.isEmpty()) {
-              map.current!.fitBounds(bounds, { padding: 40, pitch: 45, bearing: -17.6, maxZoom: 16 });
+              // fitBounds previously overridden the initial static center.
+              // Now we omit it so that initialCenter + pitch are maintained perfectly
               boundsFitted.current = true;
             }
           } catch (e) {
